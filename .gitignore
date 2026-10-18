@@ -1,0 +1,6 @@
+venv/
+data/
+ckpt/
+evalsuite/
+__pycache__/
+*.zip

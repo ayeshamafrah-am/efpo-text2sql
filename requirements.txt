@@ -1,0 +1,13 @@
+torch>=2.7
+transformers
+peft
+trl
+bitsandbytes
+datasets
+accelerate
+numpy
+sqlglot
+sqlparse
+nltk
+sentencepiece
+huggingface_hub

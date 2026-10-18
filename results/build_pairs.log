@@ -1,0 +1,6 @@
+total pairs: 6441  train: 6119  eval: 322
+by source:    {'bird': 4267, 'spider': 2174}
+by pair_type: {'self': 4863, 'gold': 1578}
+by rej_status: {'ok': 4771, 'error': 1670}
+by tag:       {'nested': 752, 'group': 559, 'surface': 4479, 'join': 611, 'order': 428, 'agg': 594, 'setop': 179}
+by difficulty: {'unlabeled': 4267, 'extra': 692, 'hard': 487, 'medium': 852, 'easy': 143}

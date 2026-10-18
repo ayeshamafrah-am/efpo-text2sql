@@ -1,0 +1,1034 @@
+{"db_id": "concert_singer", "pred_sql": "SELECT count(*) FROM singer"}
+{"db_id": "concert_singer", "pred_sql": "SELECT count(*) FROM singer"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name ,  country ,  age FROM singer ORDER BY age DESC"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name ,  country ,  age FROM singer ORDER BY age DESC"}
+{"db_id": "concert_singer", "pred_sql": "SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France'"}
+{"db_id": "concert_singer", "pred_sql": "SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France'"}
+{"db_id": "concert_singer", "pred_sql": "SELECT song_name ,  song_release_year FROM singer ORDER BY age LIMIT 1"}
+{"db_id": "concert_singer", "pred_sql": "SELECT Song_Name ,  Song_release_year FROM singer ORDER BY Age LIMIT 1"}
+{"db_id": "concert_singer", "pred_sql": "SELECT DISTINCT country FROM singer WHERE age  >  20"}
+{"db_id": "concert_singer", "pred_sql": "SELECT DISTINCT country FROM singer WHERE age  >  20"}
+{"db_id": "concert_singer", "pred_sql": "SELECT country ,  count(*) FROM singer GROUP BY country"}
+{"db_id": "concert_singer", "pred_sql": "SELECT count(*) ,  country FROM singer GROUP BY country"}
+{"db_id": "concert_singer", "pred_sql": "SELECT Song_Name FROM singer WHERE Age  >  (SELECT avg(Age) FROM singer)"}
+{"db_id": "concert_singer", "pred_sql": "SELECT Song_Name FROM singer WHERE Age  >  (SELECT avg(Age) FROM singer)"}
+{"db_id": "concert_singer", "pred_sql": "SELECT LOCATION ,  name FROM stadium WHERE capacity BETWEEN 5000 AND 10000"}
+{"db_id": "concert_singer", "pred_sql": "SELECT LOCATION ,  name FROM stadium WHERE capacity BETWEEN 5000 AND 10000"}
+{"db_id": "concert_singer", "pred_sql": "SELECT max(capacity) ,  avg(capacity) FROM stadium"}
+{"db_id": "concert_singer", "pred_sql": "SELECT avg(capacity) ,  max(capacity) FROM stadium"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name ,  capacity FROM stadium ORDER BY average DESC LIMIT 1"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name ,  capacity FROM stadium ORDER BY average DESC LIMIT 1"}
+{"db_id": "concert_singer", "pred_sql": "SELECT count(*) FROM concert WHERE YEAR  =  2014 OR YEAR  =  2015"}
+{"db_id": "concert_singer", "pred_sql": "SELECT count(*) FROM concert WHERE YEAR  =  2014 OR YEAR  =  2015"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T1.name ,  count(*) FROM stadium AS T1 JOIN concert AS T2 ON T1.stadium_id  =  T2.stadium_id GROUP BY T1.stadium_id"}
+{"db_id": "concert_singer", "pred_sql": "SELECT count(*) ,  T1.stadium_id FROM concert AS T1 JOIN singer_in_concert AS T2 ON T1.concert_id  =  T2.concert_id GROUP BY T1.stadium_id"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T1.name ,  T1.capacity FROM stadium AS T1 JOIN concert AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.year  >=  2014 GROUP BY T1.stadium_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T1.name ,  T1.capacity FROM stadium AS T1 JOIN concert AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.year  >  2013 GROUP BY T1.stadium_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "concert_singer", "pred_sql": "SELECT YEAR FROM concert GROUP BY YEAR ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "concert_singer", "pred_sql": "SELECT YEAR FROM concert GROUP BY YEAR ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name FROM stadium WHERE stadium_id NOT IN (SELECT stadium_id FROM concert)"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name FROM stadium WHERE stadium_id NOT IN (SELECT stadium_id FROM concert)"}
+{"db_id": "concert_singer", "pred_sql": "SELECT country FROM singer WHERE age  >  40 INTERSECT SELECT country FROM singer WHERE age  <  30"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name FROM stadium EXCEPT SELECT T1.name FROM stadium AS T1 JOIN concert AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.year  =  2014"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name FROM stadium EXCEPT SELECT T1.name FROM stadium AS T1 JOIN concert AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.year  =  2014"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T2.concert_name ,  T2.theme ,  count(*) FROM singer_in_concert AS T1 JOIN concert AS T2 ON T1.concert_id  =  T2.concert_id GROUP BY T1.concert_id"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T1.concert_name ,  T1.theme ,  count(*) FROM concert AS T1 JOIN singer_in_concert AS T2 ON T1.concert_ID  =  T2.concert_ID GROUP BY T1.concert_ID"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T2.name ,  count(*) FROM singer_in_concert AS T1 JOIN concert AS T2 ON T1.concert_id  =  T2.concert_id GROUP BY T1.singer_id"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T2.name ,  count(*) FROM singer_in_concert AS T1 JOIN singer AS T2 ON T1.singer_id  =  T2.singer_id GROUP BY T1.singer_id"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T3.Name FROM singer_in_concert AS T1 JOIN concert AS T2 ON T1.concert_id  =  T2.concert_id JOIN singer AS T3 ON T1.Singer_ID  =  T3.Singer_ID WHERE T2.year  =  2014"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T3.Name FROM singer_in_concert AS T1 JOIN concert AS T2 ON T1.concert_id  =  T2.concert_id JOIN singer AS T3 ON T1.Singer_ID  =  T3.Singer_ID WHERE T2.year  =  2014"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name ,  country FROM singer WHERE Song_Name LIKE '%Hey%'"}
+{"db_id": "concert_singer", "pred_sql": "SELECT name ,  country FROM singer WHERE Song_Name LIKE '%Hey%'"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T1.name ,  T1.location FROM stadium AS T1 JOIN concert AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.year  =  2014 INTERSECT SELECT T1.name ,  T1.location FROM stadium AS T1 JOIN concert AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.year  =  2015"}
+{"db_id": "concert_singer", "pred_sql": "SELECT T1.name ,  T1.location FROM stadium AS T1 JOIN concert AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.year  =  2014 INTERSECT SELECT T1.name ,  T1.location FROM stadium AS T1 JOIN concert AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.year  =  2015"}
+{"db_id": "concert_singer", "pred_sql": "SELECT count(*) FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.capacity  =  (SELECT max(capacity) FROM stadium)"}
+{"db_id": "concert_singer", "pred_sql": "SELECT count(*) FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T2.capacity  =  (SELECT max(capacity) FROM stadium)"}
+{"db_id": "pets_1", "pred_sql": "SELECT count(*) FROM pets WHERE weight  >  10"}
+{"db_id": "pets_1", "pred_sql": "SELECT count(*) FROM pets WHERE weight  >  10"}
+{"db_id": "pets_1", "pred_sql": "SELECT weight FROM pets WHERE pettype  =  \"dog\" ORDER BY pet_age LIMIT 1"}
+{"db_id": "pets_1", "pred_sql": "SELECT weight FROM pets WHERE pet_type  =  \"dog\" ORDER BY pet_age LIMIT 1"}
+{"db_id": "pets_1", "pred_sql": "SELECT max(weight) ,  pet_type FROM pets GROUP BY pet_type"}
+{"db_id": "pets_1", "pred_sql": "SELECT max(weight) ,  pettype FROM pets GROUP BY pettype"}
+{"db_id": "pets_1", "pred_sql": "SELECT count(*) FROM has_pet AS T1 JOIN student AS T2 ON T1.StuID  =  T2.StuID WHERE T2.age  >  20"}
+{"db_id": "pets_1", "pred_sql": "SELECT count(*) FROM has_pet AS T1 JOIN student AS T2 ON T1.StuID  =  T2.StuID WHERE T2.age  >  20"}
+{"db_id": "pets_1", "pred_sql": "SELECT count(*) FROM Has_Pet AS T1 JOIN Pets AS T2 ON T1.petid  =  T2.petid WHERE T2.pettype  =  \"dog\" AND T1.stuid IN (SELECT Stuid FROM Student WHERE sex  =  'F')"}
+{"db_id": "pets_1", "pred_sql": "SELECT count(*) FROM Has_Pet AS T1 JOIN Pets AS T2 ON T1.petid  =  T2.petid JOIN student AS T3 ON T1.stuid  =  T3.stuid WHERE T2.pettype  =  \"dog\" AND T3.sex  =  \"F\""}
+{"db_id": "pets_1", "pred_sql": "SELECT count(DISTINCT pettype) FROM pets"}
+{"db_id": "pets_1", "pred_sql": "SELECT count(DISTINCT pettype) FROM pets"}
+{"db_id": "pets_1", "pred_sql": "SELECT DISTINCT t3.fname FROM has_pet AS t1 JOIN pets AS t2 ON t1.petid  =  t2.petid JOIN student AS t3 ON t1.stuid  =  t3.stuid WHERE t2.pettype  =  \"cat\" OR t2.pettype  =  \"dog\""}
+{"db_id": "pets_1", "pred_sql": "SELECT DISTINCT T1.Fname FROM Student AS T1 JOIN Has_Pet AS T2 ON T1.StuID  =  T2.StuID JOIN Pets AS T3 ON T2.PetID  =  T3.PetID WHERE T3.pettype  =  \"Cat\" OR T3.pettype  =  \"Dog\""}
+{"db_id": "pets_1", "pred_sql": "SELECT T1.fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T3.pettype  =  \"cat\" INTERSECT SELECT T1.fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T3.pettype  =  \"dog\""}
+{"db_id": "pets_1", "pred_sql": "SELECT T1.fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T3.pettype  =  \"cat\" INTERSECT SELECT T1.fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T3.pettype  =  \"dog\""}
+{"db_id": "pets_1", "pred_sql": "SELECT major ,  age FROM student EXCEPT SELECT T1.major ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T3.pettype  =  \"cat\""}
+{"db_id": "pets_1", "pred_sql": "SELECT DISTINCT T1.major ,  T1.age FROM Student AS T1 JOIN Has_Pet AS T2 ON T1.stuid  =  T2.stuid JOIN Pets AS T3 ON T2.petid  =  T3.petid WHERE T3.pettype != \"cat\""}
+{"db_id": "pets_1", "pred_sql": "SELECT StuID FROM Student EXCEPT SELECT T1.StuID FROM Has_Pet AS T1 JOIN Pets AS T2 ON T1.PetID  =  T2.PetID WHERE T2.pettype  =  \"cat\""}
+{"db_id": "pets_1", "pred_sql": "SELECT StuID FROM Student EXCEPT SELECT T1.StuID FROM Has_Pet AS T1 JOIN Pets AS T2 ON T1.PetID  =  T2.PetID WHERE T2.pettype  =  \"cat\""}
+{"db_id": "pets_1", "pred_sql": "SELECT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T3.pettype  =  \"dog\" EXCEPT SELECT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T3.pettype  =  \"cat\""}
+{"db_id": "pets_1", "pred_sql": "SELECT t1.fname FROM student AS t1 JOIN has_pet AS t2 ON t1.stuid  =  t2.stuid JOIN pets AS t3 ON t2.petid  =  t3.petid WHERE t3.pettype  =  \"dog\" EXCEPT SELECT t1.fname FROM student AS t1 JOIN has_pet AS t2 ON t1.stuid  =  t2.stuid JOIN pets AS t3 ON t2.petid  =  t3.petid WHERE t3.pettype  =  \"cat\""}
+{"db_id": "pets_1", "pred_sql": "SELECT pettype ,  weight FROM pets ORDER BY pet_age LIMIT 1"}
+{"db_id": "pets_1", "pred_sql": "SELECT pet_type ,  weight FROM pets ORDER BY pet_age LIMIT 1"}
+{"db_id": "pets_1", "pred_sql": "SELECT petid ,  weight FROM pets WHERE pet_age  >  1"}
+{"db_id": "pets_1", "pred_sql": "SELECT petid ,  weight FROM pets WHERE pet_age  >  1"}
+{"db_id": "pets_1", "pred_sql": "SELECT avg(t1.pet_age) ,  max(t1.pet_age) ,  t1.pettype FROM pets AS t1 JOIN has_pet AS t2 ON t1.petid  =  t2.petid GROUP BY t1.pettype"}
+{"db_id": "pets_1", "pred_sql": "SELECT avg(t1.pet_age) ,  max(t1.pet_age) ,  t1.PetType FROM pets AS t1 JOIN has_pet AS t2 ON t1.petid  =  t2.petid GROUP BY t1.PetType"}
+{"db_id": "pets_1", "pred_sql": "SELECT avg(weight) ,  PetType FROM pets GROUP BY PetType"}
+{"db_id": "pets_1", "pred_sql": "SELECT avg(weight) ,  PetType FROM Pets GROUP BY PetType"}
+{"db_id": "pets_1", "pred_sql": "SELECT DISTINCT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid"}
+{"db_id": "pets_1", "pred_sql": "SELECT DISTINCT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid"}
+{"db_id": "pets_1", "pred_sql": "SELECT T1.PetID FROM Has_Pet AS T1 JOIN Student AS T2 ON T1.StuID  =  T2.StuID WHERE T2.LName  =  \"Smith\""}
+{"db_id": "pets_1", "pred_sql": "SELECT T1.PetID FROM Has_Pet AS T1 JOIN Student AS T2 ON T1.StuID  =  T2.StuID WHERE T2.LName  =  \"Smith\""}
+{"db_id": "pets_1", "pred_sql": "SELECT count(*) ,  StuID FROM Has_Pet GROUP BY StuID"}
+{"db_id": "pets_1", "pred_sql": "SELECT count(*) ,  T1.StuID FROM Has_Pet AS T1 JOIN Student AS T2 ON T1.StuID  =  T2.StuID GROUP BY T1.StuID"}
+{"db_id": "pets_1", "pred_sql": "SELECT T1.fname ,  T1.sex FROM Student AS T1 JOIN Has_Pet AS T2 ON T1.stuid  =  T2.stuid GROUP BY T2.stuid HAVING count(*)  >  1"}
+{"db_id": "pets_1", "pred_sql": "SELECT T1.fname ,  T1.sex FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid GROUP BY T2.stuid HAVING count(*)  >  1"}
+{"db_id": "pets_1", "pred_sql": "SELECT t1.lname FROM student AS t1 JOIN has_pet AS t2 ON t1.stuid  =  t2.stuid JOIN pets AS t3 ON t2.petid  =  t3.petid WHERE t3.pettype  =  \"cat\" AND t3.pet_age  =  3"}
+{"db_id": "pets_1", "pred_sql": "SELECT t1.lname FROM student AS t1 JOIN has_pet AS t2 ON t1.stuid  =  t2.stuid JOIN pets AS t3 ON t2.petid  =  t3.petid WHERE t3.pettype  =  \"cat\" AND t3.pet_age  =  3"}
+{"db_id": "pets_1", "pred_sql": "SELECT avg(age) FROM student WHERE StuID NOT IN (SELECT StuID FROM Has_Pet)"}
+{"db_id": "pets_1", "pred_sql": "SELECT avg(age) FROM student WHERE StuID NOT IN (SELECT StuID FROM Has_Pet)"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM continents"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM continents"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Continent ,  T1.ContinentId ,  COUNT(*) FROM continents AS T1 JOIN countries AS T2 ON T1.ContinentId  =  T2.Continent GROUP BY T1.ContinentId"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Continent ,  T1.Continent ,  COUNT(*) FROM continents AS T1 JOIN countries AS T2 ON T1.ContId  =  T2.Continent GROUP BY T1.Continent"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM countries"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM countries"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.FullName ,  T2.Maker ,  COUNT(*) FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker GROUP BY T2.Maker"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.FullName ,  T1.Id ,  COUNT(*) FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker GROUP BY T1.Id"}
+{"db_id": "car_1", "pred_sql": "SELECT Model FROM car_names ORDER BY Horsepower LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT Model FROM car_names ORDER BY Horsepower LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Model FROM model_list AS T1 JOIN cars_data AS T2 ON T1.ModelId  =  T2.Id WHERE T2.Weight  <  (SELECT avg(weight) FROM cars_data)"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Model FROM model_list AS T1 JOIN cars_data AS T2 ON T1.ModelId  =  T2.Id WHERE T2.Weight  <  (SELECT avg(weight) FROM cars_data)"}
+{"db_id": "car_1", "pred_sql": "SELECT T2.Maker FROM cars_data AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.MakeId WHERE T1.year  =  1970"}
+{"db_id": "car_1", "pred_sql": "SELECT DISTINCT T2.Maker FROM cars_data AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.MakeId WHERE T1.year  =  1970"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Make ,  T1.Year FROM car_names AS T1 JOIN cars_data AS T2 ON T1.Id  =  T2.Id ORDER BY T2.year LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Maker ,  T2.Year FROM car_makers AS T1 JOIN cars_data AS T2 ON T1.Id  =  T2.MakeId ORDER BY T2.Year LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT DISTINCT T1.Model FROM model_list AS T1 JOIN cars_data AS T2 ON T1.ModelId  =  T2.Id WHERE T2.year  >  1980"}
+{"db_id": "car_1", "pred_sql": "SELECT DISTINCT T2.Model FROM cars_data AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.MakeId WHERE T1.year  >  1980"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Continent ,  COUNT(*) FROM continents AS T1 JOIN countries AS T2 ON T1.Contid  =  T2.Continent GROUP BY T1.Continent"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Continent ,  COUNT(*) FROM continents AS T1 JOIN car_makers AS T2 ON T1.Contid  =  T2.Country GROUP BY T1.Continent"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Country FROM countries AS T1 JOIN car_makers AS T2 ON T1.CountryId  =  T2.Country GROUP BY T2.Country ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.CountryName FROM countries AS T1 JOIN car_makers AS T2 ON T1.CountryId  =  T2.Country GROUP BY T1.CountryName ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) ,  T1.FullName FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker GROUP BY T1.FullName"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) ,  T1.id ,  T1.FullName FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker GROUP BY T1.id"}
+{"db_id": "car_1", "pred_sql": "SELECT t1.Accelerate FROM cars_data AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Make  =  \"AMC\" AND T2.Model  =  \"Hornet Sportabout (sw)\""}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Accelerate FROM cars_data AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Model  =  \"amc hornet sportabout (sw)\""}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM car_makers WHERE Country  =  'France'"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM car_makers WHERE Country  =  \"France\""}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM car_makers AS T1 JOIN countries AS T2 ON T1.Country  =  T2.CountryId WHERE T2.CountryName  =  'United States'"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM car_makers AS T1 JOIN countries AS T2 ON T1.Country  =  T2.CountryId WHERE T2.CountryName  =  \"United States\""}
+{"db_id": "car_1", "pred_sql": "SELECT avg(MPG) FROM cars_data WHERE Cylinders  =  4"}
+{"db_id": "car_1", "pred_sql": "SELECT avg(MPG) FROM cars_data WHERE Cylinders  =  4"}
+{"db_id": "car_1", "pred_sql": "SELECT min(weight) FROM cars_data WHERE Cylinders  =  8 AND YEAR  =  1974"}
+{"db_id": "car_1", "pred_sql": "SELECT min(weight) FROM cars_data WHERE Cylinders  =  8 AND YEAR  =  1974"}
+{"db_id": "car_1", "pred_sql": "SELECT Make ,  Model FROM car_names"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Maker ,  T1.Model FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Country ,  T2.CountryId FROM countries AS T1 JOIN car_makers AS T2 ON T1.CountryId  =  T2.Country GROUP BY T2.CountryId HAVING count(*)  >=  1"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.CountryName ,  T1.CountryId FROM countries AS T1 JOIN car_makers AS T2 ON T1.CountryId  =  T2.Country GROUP BY T1.CountryId HAVING count(*)  >=  1"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE Horsepower  >  150"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE Horsepower  >  150"}
+{"db_id": "car_1", "pred_sql": "SELECT avg(weight) ,  YEAR FROM cars_data GROUP BY YEAR"}
+{"db_id": "car_1", "pred_sql": "SELECT avg(weight) ,  YEAR FROM cars_data GROUP BY YEAR"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.CountryName FROM countries AS T1 JOIN car_makers AS T2 ON T1.CountryId  =  T2.Country WHERE T1.Continent  =  \"Europe\" GROUP BY T1.CountryName HAVING COUNT(*)  >=  3"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.CountryName FROM countries AS T1 JOIN car_makers AS T2 ON T1.CountryId  =  T2.Country WHERE T1.Continent  =  \"Europe\" GROUP BY T1.CountryName HAVING COUNT(*)  >=  3"}
+{"db_id": "car_1", "pred_sql": "SELECT max(Horsepower) ,  T1.Make FROM car_names AS T1 JOIN cars_data AS T2 ON T1.Id  =  T2.Id WHERE T2.Cylinders  =  3"}
+{"db_id": "car_1", "pred_sql": "SELECT max(Horsepower) ,  Make FROM cars_data WHERE Cylinders  =  3"}
+{"db_id": "car_1", "pred_sql": "SELECT Model FROM car_names AS T1 JOIN cars_data AS T2 ON T1.MakeId  =  T2.Id ORDER BY MPG LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Model FROM car_names AS T1 JOIN cars_data AS T2 ON T1.MakeId  =  T2.Id ORDER BY MPG DESC LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT avg(Horsepower) FROM cars_data WHERE YEAR  <  1980"}
+{"db_id": "car_1", "pred_sql": "SELECT avg(Horsepower) FROM cars_data WHERE YEAR  <  1980"}
+{"db_id": "car_1", "pred_sql": "SELECT avg(T1.Edispl) FROM cars_data AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Model  =  \"Volvo\""}
+{"db_id": "car_1", "pred_sql": "SELECT avg(T1.Edispl) FROM cars_data AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Make  =  \"Volvo\""}
+{"db_id": "car_1", "pred_sql": "SELECT max(Accelerate) ,  Cylinders FROM cars_data GROUP BY Cylinders"}
+{"db_id": "car_1", "pred_sql": "SELECT max(Accelerate) ,  Cylinders FROM cars_data GROUP BY Cylinders"}
+{"db_id": "car_1", "pred_sql": "SELECT Model FROM car_makers GROUP BY Model ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT Model FROM model_list GROUP BY Model ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE Cylinders  >  4"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE Cylinders  >  4"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE YEAR  =  1980"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE YEAR  =  1980"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker WHERE T1.FullName  =  \"American Motor Company\""}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker WHERE T1.FullName  =  \"American Motor Company\""}
+{"db_id": "car_1", "pred_sql": "SELECT T1.FullName ,  T1.Id FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker GROUP BY T1.Id HAVING count(*)  >  3"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Maker ,  T1.Id FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker GROUP BY T1.Id HAVING count(*)  >  3"}
+{"db_id": "car_1", "pred_sql": "SELECT DISTINCT T1.Model FROM model_list AS T1 JOIN car_makers AS T2 ON T1.Maker  =  T2.Id WHERE T2.FullName  =  \"General Motors\" OR T1.Weight  >  3500"}
+{"db_id": "car_1", "pred_sql": "SELECT DISTINCT T1.Model FROM model_list AS T1 JOIN car_names AS T2 ON T1.Model  =  T2.Model WHERE T2.Make  =  \"General Motors\" OR T2.Weight  >  3500"}
+{"db_id": "car_1", "pred_sql": "SELECT YEAR FROM cars_data WHERE Weight BETWEEN 3000 AND 4000"}
+{"db_id": "car_1", "pred_sql": "SELECT DISTINCT YEAR FROM cars_data WHERE weight  <  4000 INTERSECT SELECT DISTINCT YEAR FROM cars_data WHERE weight  >  3000"}
+{"db_id": "car_1", "pred_sql": "SELECT Horsepower FROM cars_data ORDER BY accelerate DESC LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT Horsepower FROM cars_data ORDER BY accelerate DESC LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Cylinders FROM cars_data AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Model  =  \"Volvo\" ORDER BY T1.Accelerate LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Cylinders FROM cars_data AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Model  =  \"Volvo\""}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE accelerate  >  (SELECT max(accelerate) FROM cars_data)"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE accelerate  >  (SELECT max(accelerate) FROM cars_data)"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM ( SELECT country FROM car_makers GROUP BY country HAVING count(*)  >  2 )"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM ( SELECT country ,  count(*) FROM car_makers AS T1 JOIN countries AS T2 ON T1.Country  =  T2.CountryId GROUP BY country HAVING count(*)  >  2 )"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE Cylinders  >  6"}
+{"db_id": "car_1", "pred_sql": "SELECT count(*) FROM cars_data WHERE Cylinders  >  6"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Model FROM car_names AS T1 JOIN cars_data AS T2 ON T1.MakeId  =  T2.Id WHERE T2.Cylinders  =  4 ORDER BY T2.Horsepower DESC LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Model FROM car_names AS T1 JOIN cars_data AS T2 ON T1.MakeId  =  T2.Id WHERE T2.Cylinders  =  4 ORDER BY T2.Horsepower DESC LIMIT 1"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.MakeId ,  T1.Make FROM car_makers AS T1 JOIN car_names AS T2 ON T1.Id  =  T2.Model WHERE T2.Horsepower  >  (SELECT min(Horsepower) FROM cars_data) EXCEPT SELECT MakeId ,  Make FROM car_makers WHERE Cylinders  >  3"}
+{"db_id": "car_1", "pred_sql": "SELECT MakeId ,  Make FROM car_names WHERE Cylinders  <  4 AND Horsepower != ( SELECT min(Horsepower) FROM cars_data )"}
+{"db_id": "car_1", "pred_sql": "SELECT max(MPG) FROM cars_data WHERE Cylinders  =  8 OR YEAR  <  1980"}
+{"db_id": "car_1", "pred_sql": "SELECT max(MPG) FROM cars_data WHERE Cylinders  =  8 OR YEAR  <  1980"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.Model FROM model_list AS T1 JOIN cars_data AS T2 ON T1.ModelId  =  T2.Id WHERE T2.Weight  <  3500 EXCEPT SELECT T3.Model FROM model_list AS T3 JOIN car_makers AS T4 ON T3.Maker  =  T4.Id JOIN car_names AS T5 ON T3.ModelId  =  T5.MakeId WHERE T4.Maker  =  'Ford Motor Company'"}
+{"db_id": "car_1", "pred_sql": "SELECT DISTINCT T1.Model FROM model_list AS T1 JOIN cars_data AS T2 ON T1.ModelId  =  T2.Id WHERE T2.Weight  <  3500 EXCEPT SELECT T3.Model FROM model_list AS T3 JOIN car_makers AS T4 ON T3.Maker  =  T4.Id JOIN car_names AS T5 ON T3.ModelId  =  T5.MakeId WHERE T4.Maker  =  \"Ford\""}
+{"db_id": "car_1", "pred_sql": "SELECT CountryName FROM countries WHERE CountryId NOT IN (SELECT Country FROM car_makers)"}
+{"db_id": "car_1", "pred_sql": "SELECT CountryName FROM countries WHERE CountryId NOT IN (SELECT Country FROM car_makers)"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.id ,  T1.Maker FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker GROUP BY T1.id HAVING count(*)  >=  2 INTERSECT SELECT T1.id ,  T1.Maker FROM car_makers AS T1 JOIN model_list AS T2 ON T1.Id  =  T2.Maker GROUP BY T1.id HAVING count(*)  >  3"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.id ,  T1.maker FROM car_makers AS T1 JOIN model_list AS T2 ON T1.id  =  T2.maker GROUP BY T1.id HAVING count(*)  >=  2 INTERSECT SELECT T1.id ,  T1.maker FROM car_makers AS T1 JOIN car_names AS T2 ON T1.id  =  T2.MakeId GROUP BY T1.id HAVING count(*)  >  3"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.CountryId ,  T2.CountryName FROM car_makers AS T1 JOIN countries AS T2 ON T1.Country  =  T2.CountryId JOIN model_list AS T3 ON T1.Id  =  T3.Maker WHERE T3.Model  =  'fiat' OR COUNT(*)  >  3"}
+{"db_id": "car_1", "pred_sql": "SELECT T1.CountryId ,  T2.CountryName FROM car_makers AS T1 JOIN countries AS T2 ON T1.Country  =  T2.Continent WHERE T1.FullName  =  \"Fiat\" OR (SELECT count(*) FROM car_makers AS T3 JOIN countries AS T4 ON T3.Country  =  T4.Continent WHERE T4.CountryName  =  T2.CountryName)  >  3"}
+{"db_id": "flight_2", "pred_sql": "SELECT Country FROM airlines WHERE Airline  =  \"JetBlue Airways\""}
+{"db_id": "flight_2", "pred_sql": "SELECT Country FROM airlines WHERE Airline  =  \"JetBlue Airways\""}
+{"db_id": "flight_2", "pred_sql": "SELECT Abbreviation FROM airlines WHERE Airline  =  \"JetBlue Airways\""}
+{"db_id": "flight_2", "pred_sql": "SELECT Abbreviation FROM airlines WHERE Airline  =  \"JetBlue Airways\""}
+{"db_id": "flight_2", "pred_sql": "SELECT Airline ,  Abbreviation FROM airlines WHERE Country  =  \"USA\""}
+{"db_id": "flight_2", "pred_sql": "SELECT Airline ,  Abbreviation FROM airlines WHERE Country  =  'United States'"}
+{"db_id": "flight_2", "pred_sql": "SELECT AirportCode ,  AirportName FROM airports WHERE City  =  \"Anthony\""}
+{"db_id": "flight_2", "pred_sql": "SELECT AirportCode ,  AirportName FROM airports WHERE City  =  \"Anthony\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airlines"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airlines"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airports"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airports"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights"}
+{"db_id": "flight_2", "pred_sql": "SELECT Airline FROM airlines WHERE Abbreviation  =  'UAL'"}
+{"db_id": "flight_2", "pred_sql": "SELECT Airline FROM airlines WHERE Abbreviation  =  'UAL'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airlines WHERE country  =  'United States'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airlines WHERE country  =  'United States'"}
+{"db_id": "flight_2", "pred_sql": "SELECT city ,  country FROM airports WHERE airportname  =  'Alton Airport'"}
+{"db_id": "flight_2", "pred_sql": "SELECT city ,  country FROM airports WHERE airportname  =  'Alton Airport'"}
+{"db_id": "flight_2", "pred_sql": "SELECT AirportName FROM airports WHERE AirportCode  =  'AKO'"}
+{"db_id": "flight_2", "pred_sql": "SELECT AirportName FROM airports WHERE AirportCode  =  'AKO'"}
+{"db_id": "flight_2", "pred_sql": "SELECT AirportName FROM airports WHERE City  =  'Aberdeen'"}
+{"db_id": "flight_2", "pred_sql": "SELECT airportname FROM airports WHERE city  =  \"Aberdeen\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights WHERE SourceAirport  =  'APG'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights WHERE SourceAirport  =  'APG'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights WHERE DestAirport  =  \"ATL\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights WHERE DestAirport  =  \"ATL\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.sourceairport WHERE T1.city  =  \"Aberdeen\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.sourceairport WHERE T1.city  =  \"Aberdeen\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.destairport WHERE T1.city  =  \"Aberdeen\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.destairport WHERE T1.city  =  \"Aberdeen\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.airportcode WHERE T2.city  =  'Aberdeen' JOIN airports AS T3 ON T1.DestAirport  =  T3.airportcode WHERE T3.city  =  'Ashley'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.sourceairport WHERE T1.city  =  \"Aberdeen\" INTERSECT SELECT count(*) FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.destairport WHERE T1.city  =  \"Ashley\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline  =  T2.uid WHERE T2.Airline  =  'JetBlue Airways'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline  =  T2.uid WHERE T2.Airline  =  \"JetBlue Airways\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T1.Airline  =  (SELECT uid FROM airlines WHERE Airline  =  'United Airlines') AND T2.AirportName  =  'ASY'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T1.Airline  =  (SELECT uid FROM airlines WHERE Airline  =  'United Airlines') AND T2.City  =  'ASY'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.airportcode WHERE T1.Airline  =  (SELECT uid FROM airlines WHERE Airline  =  'United Airlines') AND T2.airportname  =  'AHD'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.airportcode WHERE T1.Airline  =  (SELECT uid FROM airlines WHERE Airline  =  \"United Airlines\") AND T2.AirportName  =  \"AHD Airport\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport  =  T2.airportcode JOIN airlines AS T3 ON T1.Airline  =  T3.uid WHERE T3.Airline  =  'United Airlines' AND T2.city  =  'Aberdeen'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport  =  T2.airportcode WHERE T2.city  =  \"Aberdeen\""}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.city FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.destairport GROUP BY T1.city ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.city FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.destairport GROUP BY T2.destairport ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.city FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.sourceairport GROUP BY T1.city ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.city FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.sourceairport GROUP BY T2.sourceairport ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT DestAirport FROM flights GROUP BY DestAirport ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT DestAirport FROM flights GROUP BY DestAirport ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT SourceAirport FROM flights GROUP BY SourceAirport ORDER BY count(*) ASC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT SourceAirport FROM flights GROUP BY SourceAirport ORDER BY count(*) ASC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline  =  T2.uid GROUP BY T1.Airline ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline  =  T2.uid GROUP BY T1.Airline ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Abbreviation ,  T1.Country FROM airlines AS T1 JOIN flights AS T2 ON T1.uid  =  T2.Airline GROUP BY T2.Airline ORDER BY count(*) LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Abbreviation ,  T1.Country FROM airlines AS T1 JOIN flights AS T2 ON T1.uid  =  T2.Airline GROUP BY T2.Airline ORDER BY count(*) LIMIT 1"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.AirportName  =  'AHD'"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2 AirportCode WHERE T2.City  =  'AHD'"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.AirportName  =  'AHD'"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport  =  T2 AirportCode WHERE T2.AirportName  =  \"AHD\""}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.AirportName  =  'APG' INTERSECT SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.AirportName  =  'CVO'"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  'APG' INTERSECT SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  'CVO'"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  'CVO' EXCEPT SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  'APG'"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  \"CVO\" EXCEPT SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  \"APG\""}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode GROUP BY T1.Airline HAVING count(*)  >=  10"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode GROUP BY T1.Airline HAVING count(*)  >=  10"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline  =  T2.uid GROUP BY T1.Airline HAVING count(*)  <  200"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.Airline FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline  =  T2.uid GROUP BY T1.Airline HAVING count(*)  <  200"}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.FlightNo FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline  =  T2.uid WHERE T2.Airline  =  \"United Airlines\""}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.FlightNo FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline  =  T2.uid WHERE T2.Airline  =  \"United Airlines\""}
+{"db_id": "flight_2", "pred_sql": "SELECT FlightNo FROM flights WHERE SourceAirport  =  \"APG\""}
+{"db_id": "flight_2", "pred_sql": "SELECT FlightNo FROM flights WHERE SourceAirport  =  \"APG\""}
+{"db_id": "flight_2", "pred_sql": "SELECT FlightNo FROM flights WHERE DestAirport  =  \"APG\""}
+{"db_id": "flight_2", "pred_sql": "SELECT FlightNo FROM flights WHERE DestAirport  =  \"APG\""}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  \"Aberdeen \""}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  \"Aberdeen\""}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.City  =  \"Aberdeen\""}
+{"db_id": "flight_2", "pred_sql": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.City  =  \"Aberdeen\""}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.destairport WHERE T1.city  =  'Aberdeen' OR T1.city  =  'Abilene'"}
+{"db_id": "flight_2", "pred_sql": "SELECT count(*) FROM airports AS T1 JOIN flights AS T2 ON T1.airportcode  =  T2.destairport WHERE T1.city  =  'Aberdeen' OR T1.city  =  'Abilene'"}
+{"db_id": "flight_2", "pred_sql": "SELECT airportname FROM airports WHERE airportcode NOT IN (SELECT sourceairport FROM flights) AND airportcode NOT IN (SELECT destairport FROM flights)"}
+{"db_id": "flight_2", "pred_sql": "SELECT airportname FROM airports WHERE airportcode NOT IN (SELECT sourceairport FROM flights) AND airportcode NOT IN (SELECT destairport FROM flights)"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT count(*) FROM employee"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT count(*) FROM employee"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name FROM employee ORDER BY Age ASC"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name FROM employee ORDER BY age ASC"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT count(*) ,  city FROM employee GROUP BY city"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT count(*) ,  city FROM employee GROUP BY city"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT city FROM employee WHERE age  <  30 GROUP BY city HAVING count(*)  >  1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT city FROM employee WHERE age  <  30 GROUP BY city HAVING count(*)  >  1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT LOCATION ,  count(*) FROM shop GROUP BY LOCATION"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT LOCATION ,  count(*) FROM shop GROUP BY LOCATION"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT manager_name ,  district FROM shop ORDER BY number_products DESC LIMIT 1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT manager_name ,  district FROM shop ORDER BY number_products DESC LIMIT 1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT min(Number_products) ,  max(Number_products) FROM shop"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT min(Number_products) ,  max(Number_products) FROM shop"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name ,  LOCATION ,  district FROM shop ORDER BY number_products DESC"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name ,  LOCATION ,  district FROM shop ORDER BY number_products DESC"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name FROM shop WHERE number_products  >  (SELECT avg(number_products) FROM shop)"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name FROM shop WHERE number_products  >  (SELECT avg(number_products) FROM shop)"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT T1.name FROM employee AS T1 JOIN evaluation AS T2 ON T1.employee_id  =  T2.employee_id GROUP BY T2.employee_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT T1.name FROM employee AS T1 JOIN evaluation AS T2 ON T1.employee_id  =  T2.employee_id GROUP BY T2.Employee_ID ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT T1.name FROM employee AS T1 JOIN evaluation AS T2 ON T1.employee_id  =  T2.employee_id ORDER BY T2.bonus DESC LIMIT 1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT T1.name FROM employee AS T1 JOIN evaluation AS T2 ON T1.employee_id  =  T2.employee_id ORDER BY bonus DESC LIMIT 1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name FROM employee WHERE employee_id NOT IN (SELECT employee_id FROM evaluation)"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name FROM employee WHERE employee_id NOT IN (SELECT employee_id FROM evaluation)"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT T1.name FROM shop AS T1 JOIN hiring AS T2 ON T1.shop_id  =  T2.shop_id GROUP BY T1.shop_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT T1.name FROM shop AS T1 JOIN hiring AS T2 ON T1.shop_id  =  T2.shop_id GROUP BY T1.shop_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name FROM shop WHERE shop_id NOT IN (SELECT shop_id FROM hiring)"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT name FROM shop WHERE shop_id NOT IN (SELECT shop_id FROM hiring)"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT T2.name ,  count(*) FROM hiring AS T1 JOIN shop AS T2 ON T1.shop_id  =  T2.shop_id GROUP BY T1.shop_id"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT count(*) ,  T2.name FROM hiring AS T1 JOIN shop AS T2 ON T1.shop_id  =  T2.shop_id GROUP BY T1.shop_id"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT sum(bonus) FROM evaluation"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT sum(bonus) FROM evaluation"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT * FROM hiring"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT * FROM hiring"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT District FROM shop WHERE Number_products  <  3000 INTERSECT SELECT District FROM shop WHERE Number_products  >  10000"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT district FROM shop WHERE number_products  <  3000 INTERSECT SELECT district FROM shop WHERE number_products  >  10000"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT count(DISTINCT LOCATION) FROM shop"}
+{"db_id": "employee_hire_evaluation", "pred_sql": "SELECT count(DISTINCT LOCATION) FROM shop"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM Documents"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM Documents"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_id ,  document_name ,  document_description FROM Documents"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_id ,  document_name ,  document_description FROM documents"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_name ,  template_id FROM documents WHERE document_description LIKE '%w%'"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_name ,  template_id FROM documents WHERE document_description LIKE '%w%'"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_id ,  template_id ,  document_description FROM documents WHERE document_name  =  \"Robbin CV\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_id ,  template_id ,  document_description FROM documents WHERE document_name  =  \"Robbin CV\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(DISTINCT template_id) FROM documents"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(DISTINCT template_id) FROM documents"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM templates AS t1 JOIN documents AS t2 ON t1.template_id  =  t2.template_id WHERE t1.template_type_code  =  'PPT'"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM templates AS t1 JOIN documents AS t2 ON t1.template_id  =  t2.template_id JOIN ref_template_types AS t3 ON t1.template_type_code  =  t3.template_type_code WHERE t3.template_type_description  =  'PPT'"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id ,  count(*) FROM Documents GROUP BY template_id"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id ,  count(*) FROM documents GROUP BY template_id"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.template_id ,  T1.template_type_code FROM templates AS T1 JOIN documents AS T2 ON T1.template_id  =  T2.template_id GROUP BY T1.template_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.template_id ,  T1.template_type_code FROM templates AS T1 JOIN documents AS T2 ON T1.template_id  =  T2.template_id GROUP BY T1.template_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.template_id FROM documents AS T1 JOIN paragraphs AS T2 ON T1.document_id  =  T2.document_id GROUP BY T1.document_id HAVING count(*)  >  1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id FROM documents GROUP BY template_id HAVING count(*)  >  1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id FROM templates EXCEPT SELECT template_id FROM documents"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id FROM templates EXCEPT SELECT template_id FROM documents"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM Templates"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM Templates"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id ,  version_number ,  template_type_code FROM templates"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id ,  version_number ,  template_type_code FROM templates"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT DISTINCT template_type_code FROM templates"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT DISTINCT template_type_code FROM templates"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id FROM templates WHERE template_type_code  =  \"PP\" OR template_type_code  =  \"PPT\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id FROM templates WHERE template_type_code  =  \"PP\" OR template_type_code  =  \"PPT\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM Templates WHERE Template_Type_Code  =  \"CV\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM Ref_Template_Types AS T1 JOIN Templates AS T2 ON T1.template_type_code  =  T2.template_type_code WHERE T1.template_type_description  =  \"CV\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT version_number ,  template_type_code FROM templates WHERE version_number  >  5"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT version_number ,  template_type_code FROM templates WHERE version_number  >  5"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT Template_Type_Code ,  count(*) FROM Templates GROUP BY Template_Type_Code"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT Template_Type_Code ,  count(*) FROM Templates GROUP BY Template_Type_Code"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT Template_Type_Code FROM Templates GROUP BY Template_Type_Code ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT Template_Type_Code FROM Templates GROUP BY Template_Type_Code ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_type_code FROM templates GROUP BY template_type_code HAVING count(*)  <  3"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT Template_Type_Code FROM Templates GROUP BY Template_Type_Code HAVING count(*)  <  3"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT min(Version_Number) ,  Template_Type_Code FROM Templates"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT min(Version_Number) ,  Template_Type_Code FROM Templates"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.template_type_code FROM templates AS t1 JOIN documents AS t2 ON t1.template_id  =  t2.template_id WHERE t2.document_name  =  \"Data base\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.template_type_code FROM templates AS T1 JOIN documents AS T2 ON T1.template_id  =  T2.template_id WHERE T2.document_name  =  \"Data base\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.document_name FROM documents AS t1 JOIN templates AS t2 ON t1.template_id  =  t2.template_id WHERE t2.template_type_code  =  \"BK\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t3.document_name FROM templates AS t1 JOIN documents AS t2 ON t1.template_id  =  t2.template_id JOIN paragraphs AS t3 ON t2.document_id  =  t3.document_id WHERE t1.template_type_code  =  \"BK\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.template_type_code ,  count(*) FROM Ref_template_types AS T1 JOIN Documents AS T2 ON T1.template_type_code  =  T2.template_id GROUP BY T1.template_type_code"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.template_type_code ,  count(*) FROM Ref_template_types AS T1 JOIN Documents AS T2 ON T1.template_type_code  =  T2.template_id GROUP BY T1.template_type_code"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.template_type_code FROM templates AS t1 JOIN documents AS t2 ON t1.template_id  =  t2.template_id GROUP BY t1.template_type_code ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.template_type_code FROM ref_template_types AS t1 JOIN templates AS t2 ON t1.template_type_code  =  t2.template_type_code JOIN documents AS t3 ON t2.template_id  =  t3.template_id GROUP BY t1.template_type_code ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_type_code FROM Ref_template_types EXCEPT SELECT T1.template_type_code FROM Ref_template_types AS T1 JOIN templates AS T2 ON T1.template_type_code  =  T2.template_type_code"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_type_code FROM Ref_template_types EXCEPT SELECT T1.template_type_code FROM Ref_template_types AS T1 JOIN templates AS T2 ON T1.template_type_code  =  T2.template_type_code"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_type_code ,  template_type_description FROM Ref_template_types"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT Template_Type_Code ,  Template_Type_Description FROM Ref_Template_Types"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_type_description FROM Ref_template_types WHERE template_type_code  =  \"AD\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_type_description FROM Ref_template_types WHERE template_type_code  =  \"AD\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_type_code FROM Ref_template_types WHERE template_type_description  =  \"Book\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_type_code FROM Ref_template_types WHERE template_type_description  =  \"Book\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT DISTINCT T1.template_type_description FROM Ref_template_types AS T1 JOIN templates AS T2 ON T1.template_type_code  =  T2.template_type_code JOIN documents AS T3 ON T2.template_id  =  T3.template_id"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT DISTINCT T1.template_details FROM templates AS T1 JOIN documents AS T2 ON T1.template_id  =  T2.template_id"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.template_id FROM templates AS T1 JOIN Ref_template_types AS T2 ON T1.template_type_code  =  T2.template_type_code WHERE T2.template_type_description  =  \"Presentation\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT template_id FROM templates WHERE template_details  =  'Presentation'"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM paragraphs"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM paragraphs"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM paragraphs AS T1 JOIN documents AS T2 ON T1.document_id  =  T2.document_id WHERE T2.document_name  =  \"Summer Show\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT count(*) FROM paragraphs AS T1 JOIN documents AS T2 ON T1.document_id  =  T2.document_id WHERE T2.document_name  =  \"Summer Show\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT Other_Details FROM Paragraphs WHERE Paragraph_Text  =  \"Korea \""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.Other_Details FROM paragraphs AS t1 JOIN documents AS t2 ON t1.document_id  =  t2.document_id WHERE t2.document_name  =  'Korea'"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.paragraph_id ,  t1.paragraph_text FROM paragraphs AS t1 JOIN documents AS t2 ON t1.document_id  =  t2.document_id WHERE t2.document_name  =  \"Welcome to NY\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.paragraph_id ,  t1.paragraph_text FROM paragraphs AS t1 JOIN documents AS t2 ON t1.document_id  =  t2.document_id WHERE t2.document_name  =  \"Welcome to NY\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.paragraph_text FROM paragraphs AS t1 JOIN documents AS t2 ON t1.document_id  =  t2.document_id WHERE t2.document_name  =  \"Customer reviews\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.paragraph_text FROM paragraphs AS t1 JOIN documents AS t2 ON t1.document_id  =  t2.document_id WHERE t2.document_name  =  \"Customer reviews\""}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.document_id ,  count(*) FROM documents AS T1 JOIN paragraphs AS T2 ON T1.document_id  =  T2.document_id GROUP BY T1.document_id ORDER BY T1.document_id"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_id ,  count(*) FROM paragraphs GROUP BY document_id ORDER BY document_id"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.document_id ,  T1.document_name ,  count(*) FROM documents AS T1 JOIN paragraphs AS T2 ON T1.document_id  =  T2.document_id GROUP BY T1.document_id"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.document_id ,  T1.document_name ,  count(*) FROM documents AS T1 JOIN paragraphs AS T2 ON T1.document_id  =  T2.document_id GROUP BY T1.document_id"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_id FROM paragraphs GROUP BY document_id HAVING count(*)  >=  2"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_id FROM paragraphs GROUP BY document_id HAVING count(*)  >=  2"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.document_id ,  t1.document_name FROM documents AS t1 JOIN paragraphs AS t2 ON t1.document_id  =  t2.document_id GROUP BY t1.document_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT t1.document_id ,  t1.document_name FROM documents AS t1 JOIN paragraphs AS t2 ON t1.document_id  =  t2.document_id GROUP BY t1.document_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_id FROM paragraphs GROUP BY document_id ORDER BY count(*) ASC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT document_id FROM paragraphs GROUP BY document_id ORDER BY count(*) ASC LIMIT 1"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.document_id FROM documents AS T1 JOIN paragraphs AS T2 ON T1.document_id  =  T2.document_id GROUP BY T1.document_id HAVING count(*) BETWEEN 1 AND 2"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.document_id FROM documents AS T1 JOIN paragraphs AS T2 ON T1.document_id  =  T2.document_id GROUP BY T1.document_id HAVING count(*) BETWEEN 1 AND 2"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.document_id FROM paragraphs AS T1 JOIN documents AS T2 ON T1.document_id  =  T2.document_id WHERE T1.paragraph_text  =  'Brazil' INTERSECT SELECT T1.document_id FROM paragraphs AS T1 JOIN documents AS T2 ON T1.document_id  =  T2.document_id WHERE T1.paragraph_text  =  'Ireland'"}
+{"db_id": "cre_Doc_Template_Mgt", "pred_sql": "SELECT T1.document_id FROM paragraphs AS T1 JOIN documents AS T2 ON T1.document_id  =  T2.document_id WHERE T1.paragraph_text LIKE '%Brazil%' INTERSECT SELECT T1.document_id FROM paragraphs AS T1 JOIN documents AS T2 ON T1.document_id  =  T2.document_id WHERE T1.paragraph_text LIKE '%Ireland%'"}
+{"db_id": "course_teach", "pred_sql": "SELECT count(*) FROM teacher"}
+{"db_id": "course_teach", "pred_sql": "SELECT count(*) FROM teacher"}
+{"db_id": "course_teach", "pred_sql": "SELECT Name FROM teacher ORDER BY Age ASC"}
+{"db_id": "course_teach", "pred_sql": "SELECT Name FROM teacher ORDER BY Age ASC"}
+{"db_id": "course_teach", "pred_sql": "SELECT Age ,  Hometown FROM teacher"}
+{"db_id": "course_teach", "pred_sql": "SELECT Age ,  Hometown FROM teacher"}
+{"db_id": "course_teach", "pred_sql": "SELECT Name FROM teacher WHERE Hometown != 'Little Lever Urban District'"}
+{"db_id": "course_teach", "pred_sql": "SELECT Name FROM teacher WHERE Hometown != 'Little Lever Urban District'"}
+{"db_id": "course_teach", "pred_sql": "SELECT Name FROM teacher WHERE Age  =  32 OR Age  =  33"}
+{"db_id": "course_teach", "pred_sql": "SELECT Name FROM teacher WHERE Age  =  32 OR Age  =  33"}
+{"db_id": "course_teach", "pred_sql": "SELECT Hometown FROM teacher ORDER BY Age ASC LIMIT 1"}
+{"db_id": "course_teach", "pred_sql": "SELECT Hometown FROM teacher ORDER BY Age ASC LIMIT 1"}
+{"db_id": "course_teach", "pred_sql": "SELECT Hometown ,  COUNT(*) FROM teacher GROUP BY Hometown"}
+{"db_id": "course_teach", "pred_sql": "SELECT Hometown ,  COUNT(*) FROM teacher GROUP BY Hometown"}
+{"db_id": "course_teach", "pred_sql": "SELECT Hometown FROM teacher GROUP BY Hometown ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "course_teach", "pred_sql": "SELECT Hometown FROM teacher GROUP BY Hometown ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "course_teach", "pred_sql": "SELECT Hometown FROM teacher GROUP BY Hometown HAVING COUNT(*)  >=  2"}
+{"db_id": "course_teach", "pred_sql": "SELECT Hometown FROM teacher GROUP BY Hometown HAVING COUNT(*)  >=  2"}
+{"db_id": "course_teach", "pred_sql": "SELECT T3.Name ,  T2.Course FROM course_arrange AS T1 JOIN course AS T2 ON T1.Course_ID  =  T2.Course_ID JOIN teacher AS T3 ON T1.Teacher_ID  =  T3.Teacher_ID"}
+{"db_id": "course_teach", "pred_sql": "SELECT T2.Name ,  T1.Course FROM course AS T1 JOIN course_arrange AS T2 ON T1.Course_ID  =  T2.Course_ID"}
+{"db_id": "course_teach", "pred_sql": "SELECT T3.Name ,  T2.Course FROM course_arrange AS T1 JOIN course AS T2 ON T1.Course_ID  =  T2.Course_ID JOIN teacher AS T3 ON T1.Teacher_ID  =  T3.Teacher_ID ORDER BY T3.Name ASC"}
+{"db_id": "course_teach", "pred_sql": "SELECT T2.Name ,  T1.Course FROM course AS T1 JOIN course_arrange AS T2 ON T1.Course_ID  =  T2.Course_ID ORDER BY T2.Name ASC"}
+{"db_id": "course_teach", "pred_sql": "SELECT T2.Name FROM course AS T1 JOIN teacher AS T2 ON T1.Course_ID  =  T2.Teacher_ID WHERE Course  =  'Math'"}
+{"db_id": "course_teach", "pred_sql": "SELECT T2.Name FROM course AS T1 JOIN teacher AS T2 ON T1.Course_ID  =  T2.Teacher_ID WHERE T1.Course  =  'Math'"}
+{"db_id": "course_teach", "pred_sql": "SELECT T2.Name ,  COUNT(*) FROM course_arrange AS T1 JOIN teacher AS T2 ON T1.Teacher_ID  =  T2.Teacher_ID GROUP BY T2.Name"}
+{"db_id": "course_teach", "pred_sql": "SELECT T2.Name ,  COUNT(*) FROM course_arrange AS T1 JOIN teacher AS T2 ON T1.Teacher_ID  =  T2.Teacher_ID GROUP BY T2.Name"}
+{"db_id": "course_teach", "pred_sql": "SELECT T2.Name FROM course_arrange AS T1 JOIN teacher AS T2 ON T1.Teacher_ID  =  T2.Teacher_ID GROUP BY T1.Teacher_ID HAVING COUNT(*)  >=  2"}
+{"db_id": "course_teach", "pred_sql": "SELECT T2.Name FROM course_arrange AS T1 JOIN teacher AS T2 ON T1.Teacher_ID  =  T2.Teacher_ID GROUP BY T1.Teacher_ID HAVING COUNT(*)  >=  2"}
+{"db_id": "course_teach", "pred_sql": "SELECT Name FROM teacher WHERE Teacher_ID NOT IN (SELECT Teacher_ID FROM course_arrange)"}
+{"db_id": "course_teach", "pred_sql": "SELECT Name FROM teacher WHERE Teacher_ID NOT IN (SELECT Teacher_ID FROM course_arrange)"}
+{"db_id": "museum_visit", "pred_sql": "SELECT count(*) FROM visitor WHERE Age  <  30"}
+{"db_id": "museum_visit", "pred_sql": "SELECT name FROM visitor WHERE LEVEL_of_membership  >  4 ORDER BY LEVEL_of_membership DESC"}
+{"db_id": "museum_visit", "pred_sql": "SELECT avg(age) FROM visitor WHERE LEVEL_of_membership  <=  4"}
+{"db_id": "museum_visit", "pred_sql": "SELECT name ,  LEVEL_of_membership FROM visitor WHERE LEVEL_of_membership  >  4 ORDER BY Age DESC"}
+{"db_id": "museum_visit", "pred_sql": "SELECT museum_id ,  name FROM museum ORDER BY num_of_staff DESC LIMIT 1"}
+{"db_id": "museum_visit", "pred_sql": "SELECT avg(num_of_staff) FROM museum WHERE open_year  <  2009"}
+{"db_id": "museum_visit", "pred_sql": "SELECT open_year ,  num_of_staff FROM museum WHERE name  =  'Plaza Museum'"}
+{"db_id": "museum_visit", "pred_sql": "SELECT name FROM museum WHERE num_of_staff  >  (SELECT min(num_of_staff) FROM museum WHERE open_year  >  2010)"}
+{"db_id": "museum_visit", "pred_sql": "SELECT T1.id ,  T1.name ,  T1.age FROM visitor AS T1 JOIN visit AS T2 ON T1.id  =  T2.visitor_id GROUP BY T1.id HAVING count(*)  >  1"}
+{"db_id": "museum_visit", "pred_sql": "SELECT T1.id ,  T1.name ,  T1.Level_of_membership FROM visitor AS T1 JOIN visit AS T2 ON T1.id  =  T2.visitor_id ORDER BY Total_spent DESC LIMIT 1"}
+{"db_id": "museum_visit", "pred_sql": "SELECT T1.museum_id ,  T2.name FROM visit AS T1 JOIN museum AS T2 ON T1.museum_id  =  T2.museum_id GROUP BY T1.museum_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "museum_visit", "pred_sql": "SELECT name FROM museum WHERE Museum_ID NOT IN (SELECT museum_id FROM visit)"}
+{"db_id": "museum_visit", "pred_sql": "SELECT T2.name ,  T2.age FROM visit AS T1 JOIN visitor AS T2 ON T1.visitor_id  =  T2.id ORDER BY num_of_ticket DESC LIMIT 1"}
+{"db_id": "museum_visit", "pred_sql": "SELECT avg(num_of_ticket) ,  max(num_of_ticket) FROM visit"}
+{"db_id": "museum_visit", "pred_sql": "SELECT sum(T2.Num_of_Ticket) FROM visitor AS T1 JOIN visit AS T2 ON T1.ID  =  T2.visitor_ID WHERE T1.Level_of_membership  =  1"}
+{"db_id": "museum_visit", "pred_sql": "SELECT T1.name FROM visitor AS T1 JOIN visit AS T2 ON T1.id  =  T2.visitor_id JOIN museum AS T3 ON T2.museum_id  =  T3.museum_id WHERE T3.open_year  <  2009 INTERSECT SELECT T1.name FROM visitor AS T1 JOIN visit AS T2 ON T1.id  =  T2.visitor_id JOIN museum AS T3 ON T2.museum_id  =  T3.museum_id WHERE T3.open_year  >  2011"}
+{"db_id": "museum_visit", "pred_sql": "SELECT count(*) FROM visitor WHERE visitor_id NOT IN ( SELECT T1.visitor_id FROM visit AS T1 JOIN museum AS T2 ON T1.museum_id  =  T2.Museum_ID WHERE T2.open_year  >  2010 )"}
+{"db_id": "museum_visit", "pred_sql": "SELECT count(*) FROM museum WHERE open_year  >  2013 OR open_year  <  2008"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) FROM players"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) FROM players"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT first_name ,  birth_date FROM players WHERE country_code  =  'USA'"}
+{"db_id": "wta_1", "pred_sql": "SELECT first_name ,  birth_date FROM players WHERE country_code  =  'USA'"}
+{"db_id": "wta_1", "pred_sql": "SELECT avg(loser_age) ,  avg(winner_age) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT avg(loser_age) ,  avg(winner_age) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT avg(winner_rank) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT avg(winner_rank) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT max(loser_rank) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT min(loser_rank) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(DISTINCT country_code) FROM players"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(DISTINCT country_code) FROM players"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(DISTINCT loser_name) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(DISTINCT loser_name) FROM matches"}
+{"db_id": "wta_1", "pred_sql": "SELECT tourney_name FROM matches GROUP BY tourney_name HAVING count(*)  >  10"}
+{"db_id": "wta_1", "pred_sql": "SELECT tourney_name FROM matches GROUP BY tourney_name HAVING count(*)  >  10"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.winner_name FROM matches AS T1 JOIN matches AS T2 ON T1.winner_id  =  T2.winner_id WHERE T1.year  =  2013 INTERSECT SELECT T1.winner_name FROM matches AS T1 JOIN matches AS T2 ON T1.winner_id  =  T2.winner_id WHERE T1.year  =  2016"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.winner_name FROM matches AS T1 JOIN matches AS T2 ON T1.winner_id  =  T2.winner_id WHERE T1.year  =  2013 INTERSECT SELECT T1.winner_name FROM matches AS T1 JOIN matches AS T2 ON T1.winner_id  =  T2.winner_id WHERE T1.year  =  2016"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) FROM matches WHERE YEAR  =  2013 OR YEAR  =  2016"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) FROM matches WHERE YEAR  =  2013 OR YEAR  =  2016"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'WTA Championships' INTERSECT SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'Australian Open'"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.first_name ,  T1.country_code FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'WTA Championships' INTERSECT SELECT T1.first_name ,  T1.country_code FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'Australian Open'"}
+{"db_id": "wta_1", "pred_sql": "SELECT first_name ,  country_code FROM players ORDER BY birth_date LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT first_name ,  country_code FROM players ORDER BY birth_date LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT first_name ,  last_name FROM players ORDER BY birth_date"}
+{"db_id": "wta_1", "pred_sql": "SELECT first_name ,  last_name FROM players ORDER BY birth_date"}
+{"db_id": "wta_1", "pred_sql": "SELECT first_name ,  last_name FROM players WHERE hand  =  'left' OR hand  =  'L' ORDER BY birth_date"}
+{"db_id": "wta_1", "pred_sql": "SELECT first_name ,  last_name FROM players WHERE hand = \"left\" ORDER BY birth_date"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.first_name ,  T1.country_code FROM players AS T1 JOIN rankings AS T2 ON T1.player_id  =  T2.player_id GROUP BY T1.player_id ORDER BY sum(T2.tours) DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.first_name ,  T1.country_code FROM players AS T1 JOIN rankings AS T2 ON T1.player_id  =  T2.player_id GROUP BY T1.player_id ORDER BY sum(T2.tours) DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT YEAR FROM matches GROUP BY YEAR ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT YEAR FROM matches GROUP BY YEAR ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.winner_name ,  T1.winner_rank_points FROM matches AS T1 JOIN players AS T2 ON T1.winner_id  =  T2.player_id GROUP BY T1.winner_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.winner_name ,  T1.winner_rank_points FROM matches AS T1 JOIN players AS T2 ON T1.winner_id  =  T2.player_id GROUP BY T1.winner_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.winner_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'Australian Open' ORDER BY T1.winner_rank_points DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.winner_name FROM matches AS T1 JOIN players AS T2 ON T1.winner_id  =  T2.player_id WHERE T1.tourney_name  =  'Australian Open' ORDER BY T2.ranking_points DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT loser_name ,  winner_name FROM matches ORDER BY minutes DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.winner_name ,  T1.loser_name FROM matches AS T1 JOIN players AS T2 ON T1.winner_id  =  T2.player_id JOIN players AS T3 ON T1.loser_id  =  T3.player_id ORDER BY T1.minutes DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT avg(t1.ranking) ,  t2.first_name FROM rankings AS t1 JOIN players AS t2 ON t1.player_id  =  t2.player_id GROUP BY t2.first_name"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.first_name ,  avg(T2.ranking) FROM players AS T1 JOIN rankings AS T2 ON T1.player_id  =  T2.player_id GROUP BY T1.player_id"}
+{"db_id": "wta_1", "pred_sql": "SELECT sum(ranking_points) ,  T1.first_name FROM players AS T1 JOIN rankings AS T2 ON T1.player_id  =  T2.player_id GROUP BY T1.player_id"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.first_name ,  sum(T2.ranking_points) FROM players AS T1 JOIN rankings AS T2 ON T1.player_id  =  T2.player_id GROUP BY T1.player_id"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) ,  country_code FROM players GROUP BY country_code"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) ,  country_code FROM players GROUP BY country_code"}
+{"db_id": "wta_1", "pred_sql": "SELECT country_code FROM players GROUP BY country_code ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT country_code FROM players GROUP BY country_code ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT country_code FROM players GROUP BY country_code HAVING count(*)  >  50"}
+{"db_id": "wta_1", "pred_sql": "SELECT country_code FROM players GROUP BY country_code HAVING count(*)  >  50"}
+{"db_id": "wta_1", "pred_sql": "SELECT ranking_date ,  count(*) FROM rankings GROUP BY ranking_date"}
+{"db_id": "wta_1", "pred_sql": "SELECT ranking_date ,  count(DISTINCT tours) FROM rankings GROUP BY ranking_date"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) ,  YEAR FROM matches GROUP BY YEAR"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) ,  YEAR FROM matches GROUP BY YEAR"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.winner_name ,  T1.winner_rank FROM matches AS T1 JOIN players AS T2 ON T1.winner_id  =  T2.player_id ORDER BY T2.birth_date LIMIT 3"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.winner_name ,  T1.winner_rank FROM matches AS T1 JOIN players AS T2 ON T1.winner_id  =  T2.player_id ORDER BY T2.birth_date LIMIT 3"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(DISTINCT T1.player_id) FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T1.hand  =  'left' AND T2.tourney_level  =  'W'"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T1.hand  =  'left' AND T2.tourney_level  =  'W'"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.first_name ,  T1.country_code ,  T1.birth_date FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id ORDER BY T2.winner_rank_points DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT T1.first_name ,  T1.country_code ,  T1.birth_date FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id GROUP BY T2.winner_id ORDER BY sum(T2.winner_rank_points) DESC LIMIT 1"}
+{"db_id": "wta_1", "pred_sql": "SELECT count(*) ,  hand FROM players GROUP BY hand"}
+{"db_id": "wta_1", "pred_sql": "SELECT hand ,  count(*) FROM players GROUP BY hand"}
+{"db_id": "battle_death", "pred_sql": "SELECT count(*) FROM ship WHERE disposition_of_ship  =  'Captured'"}
+{"db_id": "battle_death", "pred_sql": "SELECT name ,  tonnage FROM ship ORDER BY name DESC"}
+{"db_id": "battle_death", "pred_sql": "SELECT name ,  date ,  result FROM battle"}
+{"db_id": "battle_death", "pred_sql": "SELECT max(killed) ,  min(killed) FROM death"}
+{"db_id": "battle_death", "pred_sql": "SELECT avg(injured) FROM death"}
+{"db_id": "battle_death", "pred_sql": "SELECT sum(killed) ,  sum(injured) FROM death AS T1 JOIN ship AS T2 ON T1.caused_by_ship_id  =  T2.id WHERE T2.tonnage  =  't'"}
+{"db_id": "battle_death", "pred_sql": "SELECT name ,  result FROM battle WHERE bulgarian_commander != 'Boril'"}
+{"db_id": "battle_death", "pred_sql": "SELECT DISTINCT T1.id ,  T1.name FROM battle AS T1 JOIN ship AS T2 ON T1.id  =  T2.lost_in_battle WHERE T2.ship_type  =  'Brig'"}
+{"db_id": "battle_death", "pred_sql": "SELECT T1.id ,  T1.name FROM battle AS T1 JOIN death AS T2 ON T1.id  =  T2.caused_by_ship_id GROUP BY T1.id HAVING sum(T2.killed)  >  10"}
+{"db_id": "battle_death", "pred_sql": "SELECT T1.id ,  T1.name FROM ship AS T1 JOIN death AS T2 ON T1.id  =  T2.caused_by_ship_id GROUP BY T1.id ORDER BY sum(T2.injured) DESC LIMIT 1"}
+{"db_id": "battle_death", "pred_sql": "SELECT DISTINCT name FROM battle WHERE bulgarian_commander  >  'Kaloyan' AND latin_commander  <  'Baldwin I'"}
+{"db_id": "battle_death", "pred_sql": "SELECT count(DISTINCT result) FROM battle"}
+{"db_id": "battle_death", "pred_sql": "SELECT count(*) FROM battle WHERE id NOT IN ( SELECT lost_in_battle FROM ship WHERE TONNAGE  =  225 )"}
+{"db_id": "battle_death", "pred_sql": "SELECT T1.name ,  T1.date FROM battle AS T1 JOIN ship AS T2 ON T1.id  =  T2.lost_in_battle WHERE T2.name  =  'Lettice' INTERSECT SELECT T1.name ,  T1.date FROM battle AS T1 JOIN ship AS T2 ON T1.id  =  T2.lost_in_battle WHERE T2.name  =  'HMS Atalanta'"}
+{"db_id": "battle_death", "pred_sql": "SELECT name ,  result ,  bulgarian_commander FROM battle WHERE id NOT IN ( SELECT lost_in_battle FROM ship WHERE LOCATION  =  'English Channel' )"}
+{"db_id": "battle_death", "pred_sql": "SELECT note FROM death WHERE note LIKE '%East%'"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT line_1 ,  line_2 FROM addresses"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT line_1 ,  line_2 FROM addresses"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(*) FROM courses"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(*) FROM courses"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT course_description FROM courses WHERE course_name  =  \"Math\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.course_description FROM Courses AS T1 JOIN Sections AS T2 ON T1.course_id  =  T2.course_id WHERE T1.course_name LIKE \"%Math%\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT zip_postcode FROM addresses WHERE city  =  \"Port Chelsea\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT zip_postcode FROM addresses WHERE city  =  \"Port Chelsea\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.department_name ,  T1.department_id FROM Departments AS T1 JOIN Degree_Programs AS T2 ON T1.department_id  =  T2.department_id GROUP BY T1.department_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.department_name ,  T1.department_id FROM Departments AS T1 JOIN Degree_Programs AS T2 ON T1.department_id  =  T2.department_id GROUP BY T1.department_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(DISTINCT department_id) FROM Degree_Programs"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(DISTINCT department_id) FROM degree_programs"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(DISTINCT degree_summary_name) FROM degree_programs"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(DISTINCT degree_summary_name) FROM degree_programs"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(DISTINCT degree_program_id) FROM degree_programs AS T1 JOIN departments AS T2 ON T1.department_id  =  T2.department_id WHERE T2.department_name  =  \"Engineering\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(*) FROM degree_programs AS T1 JOIN departments AS T2 ON T1.department_id  =  T2.department_id WHERE T2.department_name  =  \"Engineering\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT section_name ,  section_description FROM sections"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT section_name ,  section_description FROM sections"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.course_name ,  T1.course_id FROM Courses AS T1 JOIN Sections AS T2 ON T1.course_id  =  T2.course_id GROUP BY T1.course_id HAVING count(*)  <=  2"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.course_name ,  T1.course_id FROM courses AS T1 JOIN sections AS T2 ON T1.course_id  =  T2.course_id GROUP BY T1.course_id HAVING count(*)  <  2"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT section_name FROM sections ORDER BY section_name DESC"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT section_name FROM sections ORDER BY section_name DESC"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.semester_name ,  T1.semester_id FROM Semesters AS T1 JOIN Student_Enrolment AS T2 ON T1.semester_id  =  T2.semester_id GROUP BY T1.semester_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.semester_name ,  T1.semester_id FROM Semesters AS T1 JOIN Student_Enrolment AS T2 ON T1.semester_id  =  T2.semester_id GROUP BY T1.semester_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT department_description FROM DEPARTMENTS WHERE department_name LIKE \"%computer%\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT department_description FROM departments WHERE department_name LIKE \"%computer%\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name ,  T1.middle_name ,  T1.last_name ,  T1.student_id FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id GROUP BY T1.student_id HAVING count(*)  =  2"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name ,  T1.middle_name ,  T1.last_name ,  T1.student_id FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id GROUP BY T1.student_id HAVING count(*)  =  2"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name ,  T1.middle_name ,  T1.last_name FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id JOIN Degree_Programs AS T3 ON T2.degree_program_id  =  T3.degree_program_id WHERE T3.department_id IN ( SELECT department_id FROM Degree_Programs WHERE degree_summary_name  =  \"Bachelor\" )"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name ,  T1.middle_name ,  T1.last_name FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id JOIN Degree_Programs AS T3 ON T2.degree_program_id  =  T3.degree_program_id WHERE T3.department_id IN ( SELECT department_id FROM Degree_Programs WHERE degree_summary_name  =  \"Bachelors\" )"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.degree_summary_name FROM degree_programs AS T1 JOIN student_enrolment AS T2 ON T1.degree_program_id  =  T2.degree_program_id GROUP BY T1.degree_summary_name ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.degree_summary_name FROM Degree_Programs AS T1 JOIN Student_Enrolment AS T2 ON T1.degree_program_id  =  T2.degree_program_id GROUP BY T1.degree_summary_name ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.degree_program_id ,  T1.degree_summary_name FROM Degree_Programs AS T1 JOIN Student_Enrolment AS T2 ON T1.degree_program_id  =  T2.degree_program_id GROUP BY T1.degree_program_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.degree_program_id ,  T2.degree_summary_name FROM Student_Enrolment AS T1 JOIN Degree_Programs AS T2 ON T1.degree_program_id  =  T2.degree_program_id GROUP BY T1.degree_program_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.student_id ,  T1.first_name ,  T1.middle_name ,  T1.last_name ,  count(*) ,  T2.student_id FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id GROUP BY T2.student_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name ,  T1.middle_name ,  T1.last_name ,  T1.student_id ,  count(*) FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id GROUP BY T1.student_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT semester_name FROM Semesters WHERE semester_id NOT IN ( SELECT semester_id FROM Student_Enrolment )"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT semester_name FROM semesters WHERE semester_id NOT IN ( SELECT semester_id FROM student_enrolment )"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.course_name FROM courses AS T1 JOIN student_enrolment_courses AS T2 ON T1.course_id  =  T2.course_id"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.course_name FROM courses AS T1 JOIN student_enrolment_courses AS T2 ON T1.course_id  =  T2.course_id GROUP BY T1.course_name"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.course_name FROM courses AS T1 JOIN student_enrolment_courses AS T2 ON T1.course_id  =  T2.course_id GROUP BY T1.course_name ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.course_name FROM courses AS T1 JOIN student_enrolment_courses AS T2 ON T1.course_id  =  T2.course_id GROUP BY T1.course_name ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.last_name FROM students AS T1 JOIN addresses AS T2 ON T1.current_address_id  =  T2.address_id WHERE T2.state_province_county  =  \"North Carolina\" EXCEPT SELECT T1.last_name FROM students AS T1 JOIN student_enrolment AS T2 ON T1.student_id  =  T2.student_id"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.last_name FROM Students AS T1 JOIN Addresses AS T2 ON T1.current_address_id  =  T2.address_id WHERE T2.state_province_county  =  \"North Carolina\" EXCEPT SELECT T1.last_name FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.transcript_date ,  T1.transcript_id FROM transcripts AS T1 JOIN transcript_contents AS T2 ON T1.transcript_id  =  T2.transcript_id GROUP BY T1.transcript_id HAVING count(*)  >=  2"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.transcript_date ,  T1.transcript_id FROM transcripts AS T1 JOIN transcript_contents AS T2 ON T1.transcript_id  =  T2.transcript_id GROUP BY T1.transcript_id HAVING count(*)  >=  2"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT cell_mobile_number FROM Students WHERE first_name = \"Timmothy\" AND last_name = \"Ward\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT cell_mobile_number FROM Students WHERE first_name = \"Timmothy\" AND last_name = \"Ward\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT first_name ,  middle_name ,  last_name FROM Students ORDER BY date_first_registered LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT first_name ,  middle_name ,  last_name FROM Students ORDER BY date_first_registered LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name ,  T1.middle_name ,  T1.last_name FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id JOIN Semesters AS T3 ON T2.semester_id  =  T3.semester_id WHERE T3.semester_name  =  \"Graduation\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name ,  T1.middle_name ,  T1.last_name FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id JOIN Semesters AS T3 ON T2.semester_id  =  T3.semester_id WHERE T3.semester_name  =  \"Graduation\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name FROM students AS T1 JOIN addresses AS T2 ON T1.permanent_address_id  =  T2.address_id JOIN addresses AS T3 ON T1.current_address_id  =  T3.address_id WHERE T2.city != T3.city OR T2.line_1 != T3.line_1 OR T2.line_2 != T3.line_2 OR T2.line_3 != T3.line_3"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name FROM students AS T1 JOIN addresses AS T2 ON T1.current_address_id = T2.address_id JOIN addresses AS T3 ON T1.permanent_address_id = T3.address_id WHERE T2.line_1 != T3.line_1 OR T2.line_2 != T3.line_2 OR T2.line_3 != T3.line_3 OR T2.city != T3.city OR T2.zip_postcode != T3.zip_postcode OR T2.state_province_county != T3.state_province_county OR T2.country != T3.country"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.address_id ,  T1.line_1 ,  T1.line_2 ,  T1.line_3 ,  T1.city ,  T1.zip_postcode ,  T1.state_province_county ,  T1.country FROM Addresses AS T1 JOIN Students AS T2 ON T1.address_id  =  T2.current_address_id GROUP BY T1.address_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.address_id ,  T1.line_1 ,  T1.line_2 FROM Addresses AS T1 JOIN Students AS T2 ON T1.address_id = T2.current_address_id GROUP BY T1.address_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT avg(transcript_date) FROM transcripts"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT avg(transcript_date) FROM transcripts"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT transcript_date ,  other_details FROM transcripts ORDER BY transcript_date LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT transcript_date ,  other_details FROM transcripts ORDER BY transcript_date LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(*) FROM transcripts"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(*) FROM transcripts"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT transcript_date FROM transcripts ORDER BY transcript_date DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT transcript_date FROM transcripts ORDER BY transcript_date DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT student_course_id ,  count(*) FROM Transcript_Contents GROUP BY student_course_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.course_id ,  T2.student_enrolment_id FROM Student_Enrolment_Courses AS T1 JOIN Transcript_Contents AS T2 ON T1.student_course_id  =  T2.student_course_id GROUP BY T1.course_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.transcript_date ,  T1.transcript_id FROM transcripts AS T1 JOIN transcript_contents AS T2 ON T1.transcript_id  =  T2.transcript_id GROUP BY T1.transcript_id ORDER BY count(*) ASC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.transcript_date ,  T1.transcript_id FROM transcripts AS T1 JOIN transcript_contents AS T2 ON T1.transcript_id  =  T2.transcript_id GROUP BY T1.transcript_id ORDER BY count(*) ASC LIMIT 1"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.semester_name FROM semesters AS T1 JOIN student_enrolment AS T2 ON T1.semester_id  =  T2.semester_id JOIN degree_programs AS T3 ON T2.degree_program_id  =  T3.degree_program_id WHERE T3.department_id IN ( SELECT department_id FROM degree_programs WHERE degree_summary_name  =  'Master' INTERSECT SELECT department_id FROM degree_programs WHERE degree_summary_name  =  'Bachelor')"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.semester_id FROM Semesters AS T1 JOIN Student_Enrolment AS T2 ON T1.semester_id  =  T2.semester_id JOIN Degree_Programs AS T3 ON T2.degree_program_id  =  T3.degree_program_id WHERE T3.department_id IN ( SELECT department_id FROM Departments WHERE department_name  =  \"Masters\" INTERSECT SELECT department_id FROM Departments WHERE department_name  =  \"Bachelors\")"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT count(DISTINCT current_address_id) FROM Students"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT DISTINCT T1.line_1 ,  T1.line_2 ,  T1.line_3 ,  T1.city ,  T1.zip_postcode FROM Addresses AS T1 JOIN Students AS T2 ON T1.address_id = T2.current_address_id OR T1.address_id = T2.permanent_address_id"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT * FROM Students ORDER BY first_name DESC ,  middle_name DESC ,  last_name DESC"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT other_student_details FROM Students ORDER BY last_name DESC"}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT other_details FROM sections WHERE section_name  =  \"h\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT section_description FROM sections WHERE section_name  =  \"h\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name FROM Students AS T1 JOIN Addresses AS T2 ON T1.permanent_address_id = T2.address_id WHERE T2.country = \"Haiti\" OR T1.cell_mobile_number = \"09700166582\""}
+{"db_id": "student_transcripts_tracking", "pred_sql": "SELECT T1.first_name FROM Students AS T1 JOIN Addresses AS T2 ON T1.permanent_address_id = T2.address_id WHERE T2.country = \"Haiti\" OR T1.cell_mobile_number = \"09700166582\""}
+{"db_id": "tvshow", "pred_sql": "SELECT Title FROM Cartoon ORDER BY Title ASC"}
+{"db_id": "tvshow", "pred_sql": "SELECT Title FROM Cartoon ORDER BY Title ASC"}
+{"db_id": "tvshow", "pred_sql": "SELECT title FROM cartoon WHERE directed_by  =  \"Ben Jones\""}
+{"db_id": "tvshow", "pred_sql": "SELECT title FROM cartoon WHERE directed_by  =  'Ben Jones'"}
+{"db_id": "tvshow", "pred_sql": "SELECT count(*) FROM Cartoon WHERE Written_by  =  \"Joseph Kuhr\""}
+{"db_id": "tvshow", "pred_sql": "SELECT count(*) FROM Cartoon WHERE Written_by  =  \"Joseph Kuhr\""}
+{"db_id": "tvshow", "pred_sql": "SELECT title ,  directed_by FROM cartoon ORDER BY original_air_date"}
+{"db_id": "tvshow", "pred_sql": "SELECT title ,  directed_by FROM cartoon ORDER BY original_air_date"}
+{"db_id": "tvshow", "pred_sql": "SELECT title FROM cartoon WHERE directed_by  =  \"Ben Jones\" OR directed_by  =  \"Brandon Vietti\""}
+{"db_id": "tvshow", "pred_sql": "SELECT title FROM cartoon WHERE directed_by  =  'Ben Jones' OR directed_by  =  'Brandon Vietti'"}
+{"db_id": "tvshow", "pred_sql": "SELECT Country ,  COUNT(*) FROM TV_Channel GROUP BY Country ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "tvshow", "pred_sql": "SELECT Country ,  COUNT(*) FROM TV_Channel GROUP BY Country ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "tvshow", "pred_sql": "SELECT count(DISTINCT series_name) ,  count(DISTINCT CONTENT) FROM TV_Channel"}
+{"db_id": "tvshow", "pred_sql": "SELECT count(DISTINCT series_name) ,  count(DISTINCT Content) FROM TV_Channel"}
+{"db_id": "tvshow", "pred_sql": "SELECT Content FROM TV_Channel WHERE series_name  =  \"Sky Radio\""}
+{"db_id": "tvshow", "pred_sql": "SELECT Content FROM TV_channel WHERE series_name  =  'Sky Radio'"}
+{"db_id": "tvshow", "pred_sql": "SELECT Package_Option FROM TV_Channel WHERE series_name  =  \"Sky Radio\""}
+{"db_id": "tvshow", "pred_sql": "SELECT Package_Option FROM TV_Channel WHERE series_name  =  'Sky Radio'"}
+{"db_id": "tvshow", "pred_sql": "SELECT count(*) FROM TV_Channel WHERE Language  =  'English'"}
+{"db_id": "tvshow", "pred_sql": "SELECT count(*) FROM TV_Channel WHERE Language  =  'English'"}
+{"db_id": "tvshow", "pred_sql": "SELECT Language ,  COUNT(*) FROM TV_Channel GROUP BY Language ORDER BY COUNT(*) ASC LIMIT 1"}
+{"db_id": "tvshow", "pred_sql": "SELECT Language ,  COUNT(*) FROM TV_Channel GROUP BY Language ORDER BY COUNT(*) ASC LIMIT 1"}
+{"db_id": "tvshow", "pred_sql": "SELECT Language ,  COUNT(*) FROM TV_Channel GROUP BY Language"}
+{"db_id": "tvshow", "pred_sql": "SELECT Language ,  COUNT(*) FROM TV_Channel GROUP BY Language"}
+{"db_id": "tvshow", "pred_sql": "SELECT T2.series_name FROM Cartoon AS T1 JOIN TV_Channel AS T2 ON T1.Channel  =  T2.id WHERE T1.Title  =  \"The Rise of the Blue Beetle!\""}
+{"db_id": "tvshow", "pred_sql": "SELECT T2.series_name FROM Cartoon AS T1 JOIN TV_Channel AS T2 ON T1.channel  =  T2.id WHERE title  =  'The Rise of the Blue Beetle'"}
+{"db_id": "tvshow", "pred_sql": "SELECT T2.title FROM tv_channel AS T1 JOIN cartoon AS T2 ON T1.id  =  T2.channel WHERE T1.series_name  =  \"Sky Radio\""}
+{"db_id": "tvshow", "pred_sql": "SELECT T2.title FROM tv_channel AS T1 JOIN cartoon AS T2 ON T1.id  =  T2.channel WHERE T1.series_name  =  \"Sky Radio\""}
+{"db_id": "tvshow", "pred_sql": "SELECT Episode FROM TV_series ORDER BY Rating"}
+{"db_id": "tvshow", "pred_sql": "SELECT Episode FROM TV_series ORDER BY Rating"}
+{"db_id": "tvshow", "pred_sql": "SELECT Episode ,  Rating FROM TV_series ORDER BY Rating DESC LIMIT 3"}
+{"db_id": "tvshow", "pred_sql": "SELECT Episode ,  Rating FROM TV_series ORDER BY Rating DESC LIMIT 3"}
+{"db_id": "tvshow", "pred_sql": "SELECT min(Share) ,  max(Share) FROM TV_series"}
+{"db_id": "tvshow", "pred_sql": "SELECT max(Share) ,  min(Share) FROM TV_series"}
+{"db_id": "tvshow", "pred_sql": "SELECT Air_Date FROM TV_series WHERE Episode  =  \"A Love of a Lifetime\""}
+{"db_id": "tvshow", "pred_sql": "SELECT Air_Date FROM TV_series WHERE Episode  =  \"A Love of a Lifetime\""}
+{"db_id": "tvshow", "pred_sql": "SELECT Weekly_Rank FROM TV_series WHERE Episode  =  \"A Love of a Lifetime\""}
+{"db_id": "tvshow", "pred_sql": "SELECT Weekly_Rank FROM TV_series WHERE Episode  =  \"A Love of a Lifetime\""}
+{"db_id": "tvshow", "pred_sql": "SELECT T2.series_name FROM TV_series AS T1 JOIN TV_Channel AS T2 ON T1.Channel  =  T2.id WHERE T1.Episode  =  \"A Love of a Lifetime\""}
+{"db_id": "tvshow", "pred_sql": "SELECT T2.series_name FROM TV_series AS T1 JOIN TV_Channel AS T2 ON T1.Channel  =  T2.id WHERE T1.Episode  =  \"A Love of a Lifetime\""}
+{"db_id": "tvshow", "pred_sql": "SELECT T2.Episode FROM TV_Channel AS T1 JOIN TV_series AS T2 ON T1.id  =  T2.Channel WHERE T1.series_name  =  \"Sky Radio\""}
+{"db_id": "tvshow", "pred_sql": "SELECT Episode FROM TV_series WHERE Channel  =  (SELECT id FROM TV_channel WHERE series_name  =  \"Sky Radio\")"}
+{"db_id": "tvshow", "pred_sql": "SELECT count(*) ,  directed_by FROM Cartoon GROUP BY directed_by"}
+{"db_id": "tvshow", "pred_sql": "SELECT directed_by ,  count(*) FROM Cartoon GROUP BY directed_by"}
+{"db_id": "tvshow", "pred_sql": "SELECT production_code ,  channel FROM Cartoon ORDER BY original_air_date DESC LIMIT 1"}
+{"db_id": "tvshow", "pred_sql": "SELECT production_code ,  channel FROM Cartoon ORDER BY original_air_date DESC LIMIT 1"}
+{"db_id": "tvshow", "pred_sql": "SELECT Package_Option ,  series_name FROM TV_Channel WHERE Hight_definition_TV  =  'Yes'"}
+{"db_id": "tvshow", "pred_sql": "SELECT Package_Option ,  series_name FROM TV_Channel WHERE Hight_definition_TV  =  'Yes'"}
+{"db_id": "tvshow", "pred_sql": "SELECT T1.Country FROM TV_channel AS T1 JOIN Cartoon AS T2 ON T1.id  =  T2.Channel WHERE T2.Written_by  =  'Todd Casey'"}
+{"db_id": "tvshow", "pred_sql": "SELECT T1.Country FROM TV_channel AS T1 JOIN Cartoon AS T2 ON T1.id  =  T2.Channel WHERE T2.Written_by  =  'Todd Casey'"}
+{"db_id": "tvshow", "pred_sql": "SELECT country FROM TV_channel EXCEPT SELECT T1.country FROM TV_channel AS T1 JOIN cartoon AS T2 ON T1.id  =  T2.channel WHERE T2.written_by  =  'Todd Casey'"}
+{"db_id": "tvshow", "pred_sql": "SELECT Country FROM TV_channel EXCEPT SELECT T1.Country FROM TV_channel AS T1 JOIN Cartoon AS T2 ON T1.id  =  T2.Channel WHERE T2.Written_by  =  'Todd Casey'"}
+{"db_id": "tvshow", "pred_sql": "SELECT T2.series_name ,  T2.country FROM Cartoon AS T1 JOIN TV_channel AS T2 ON T1.channel  =  T2.id WHERE T1.directed_by  =  'Ben Jones' INTERSECT SELECT T2.series_name ,  T2.country FROM Cartoon AS T1 JOIN TV_channel AS T2 ON T1.channel  =  T2.id WHERE T1.directed_by  =  'Michael Chang'"}
+{"db_id": "tvshow", "pred_sql": "SELECT T2.series_name ,  T2.country FROM Cartoon AS T1 JOIN TV_channel AS T2 ON T1.channel  =  T2.id WHERE T1.directed_by  =  'Ben Jones' INTERSECT SELECT T2.series_name ,  T2.country FROM Cartoon AS T1 JOIN TV_channel AS T2 ON T1.channel  =  T2.id WHERE T1.directed_by  =  'Michael Chang'"}
+{"db_id": "tvshow", "pred_sql": "SELECT Pixel_aspect_ratio_PAR ,  Country FROM TV_Channel WHERE Language != 'English'"}
+{"db_id": "tvshow", "pred_sql": "SELECT Pixel_aspect_ratio_PAR ,  Country FROM TV_Channel WHERE Language != 'English'"}
+{"db_id": "tvshow", "pred_sql": "SELECT id FROM TV_channel GROUP BY Country HAVING count(*)  >  2"}
+{"db_id": "tvshow", "pred_sql": "SELECT id FROM TV_channel GROUP BY id HAVING count(*)  >  2"}
+{"db_id": "tvshow", "pred_sql": "SELECT id FROM TV_channel EXCEPT SELECT T1.id FROM TV_channel AS T1 JOIN Cartoon AS T2 ON T1.id  =  T2.channel WHERE T2.Directed_by  =  'Ben Jones'"}
+{"db_id": "tvshow", "pred_sql": "SELECT id FROM TV_channel EXCEPT SELECT T1.id FROM TV_channel AS T1 JOIN Cartoon AS T2 ON T1.id  =  T2.channel WHERE T2.Directed_by  =  \"Ben Jones\""}
+{"db_id": "tvshow", "pred_sql": "SELECT package_option FROM TV_channel EXCEPT SELECT T2.package_option FROM Cartoon AS T1 JOIN TV_channel AS T2 ON T1.channel  =  T2.id WHERE T1.directed_by  =  'Ben Jones'"}
+{"db_id": "tvshow", "pred_sql": "SELECT Package_Option FROM TV_Channel EXCEPT SELECT T2.Package_Option FROM Cartoon AS T1 JOIN TV_Channel AS T2 ON T1.Channel  =  T2.id WHERE T1.Directed_by  =  \"Ben Jones\""}
+{"db_id": "poker_player", "pred_sql": "SELECT count(*) FROM poker_player"}
+{"db_id": "poker_player", "pred_sql": "SELECT count(*) FROM poker_player"}
+{"db_id": "poker_player", "pred_sql": "SELECT Earnings FROM poker_player ORDER BY Earnings DESC"}
+{"db_id": "poker_player", "pred_sql": "SELECT Earnings FROM poker_player ORDER BY Earnings DESC"}
+{"db_id": "poker_player", "pred_sql": "SELECT Final_Table_Made ,  Best_Finish FROM poker_player"}
+{"db_id": "poker_player", "pred_sql": "SELECT Final_Table_Made ,  Best_Finish FROM poker_player"}
+{"db_id": "poker_player", "pred_sql": "SELECT avg(Earnings) FROM poker_player"}
+{"db_id": "poker_player", "pred_sql": "SELECT avg(Earnings) FROM poker_player"}
+{"db_id": "poker_player", "pred_sql": "SELECT Money_Rank FROM poker_player ORDER BY Earnings DESC LIMIT 1"}
+{"db_id": "poker_player", "pred_sql": "SELECT Money_Rank FROM poker_player ORDER BY Earnings DESC LIMIT 1"}
+{"db_id": "poker_player", "pred_sql": "SELECT max(Final_Table_Made) FROM poker_player WHERE Earnings  <  200000"}
+{"db_id": "poker_player", "pred_sql": "SELECT max(Final_Table_Made) FROM poker_player WHERE Earnings  <  200000"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Name FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Name FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Name FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID WHERE T1.Earnings  >  300000"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Name FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID WHERE T1.Earnings  >  300000"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Name FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID ORDER BY T1.Final_Table_Made ASC"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Name FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID ORDER BY T1.Final_Table_Made ASC"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Birth_Date FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID ORDER BY T1.Earnings LIMIT 1"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Birth_Date FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID ORDER BY T1.Earnings LIMIT 1"}
+{"db_id": "poker_player", "pred_sql": "SELECT T1.Money_Rank FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID ORDER BY T2.Height DESC LIMIT 1"}
+{"db_id": "poker_player", "pred_sql": "SELECT T1.Money_Rank FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID ORDER BY T2.Height DESC LIMIT 1"}
+{"db_id": "poker_player", "pred_sql": "SELECT avg(T1.Earnings) FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID WHERE T2.Height  >  200"}
+{"db_id": "poker_player", "pred_sql": "SELECT avg(T1.Earnings) FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID WHERE T2.Height  >  200"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Name FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID ORDER BY T1.Earnings DESC"}
+{"db_id": "poker_player", "pred_sql": "SELECT T2.Name FROM poker_player AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID ORDER BY T1.Earnings DESC"}
+{"db_id": "poker_player", "pred_sql": "SELECT Nationality ,  COUNT(*) FROM people GROUP BY Nationality"}
+{"db_id": "poker_player", "pred_sql": "SELECT Nationality ,  COUNT(*) FROM people GROUP BY Nationality"}
+{"db_id": "poker_player", "pred_sql": "SELECT Nationality FROM people GROUP BY Nationality ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "poker_player", "pred_sql": "SELECT Nationality FROM people GROUP BY Nationality ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "poker_player", "pred_sql": "SELECT Nationality FROM people GROUP BY Nationality HAVING COUNT(*)  >=  2"}
+{"db_id": "poker_player", "pred_sql": "SELECT Nationality FROM people GROUP BY Nationality HAVING COUNT(*)  >=  2"}
+{"db_id": "poker_player", "pred_sql": "SELECT Name ,  Birth_Date FROM People ORDER BY Name ASC"}
+{"db_id": "poker_player", "pred_sql": "SELECT Name ,  Birth_Date FROM People ORDER BY Name ASC"}
+{"db_id": "poker_player", "pred_sql": "SELECT Name FROM People WHERE Nationality != \"Russia\""}
+{"db_id": "poker_player", "pred_sql": "SELECT Name FROM People WHERE Nationality != 'Russia'"}
+{"db_id": "poker_player", "pred_sql": "SELECT Name FROM People WHERE People_ID NOT IN (SELECT People_ID FROM poker_player)"}
+{"db_id": "poker_player", "pred_sql": "SELECT Name FROM People WHERE People_ID NOT IN (SELECT People_ID FROM poker_player)"}
+{"db_id": "poker_player", "pred_sql": "SELECT count(DISTINCT Nationality) FROM people"}
+{"db_id": "poker_player", "pred_sql": "SELECT count(DISTINCT Nationality) FROM people"}
+{"db_id": "voter_1", "pred_sql": "SELECT count(*) FROM area_code_state"}
+{"db_id": "voter_1", "pred_sql": "SELECT contestant_number ,  contestant_name FROM contestants ORDER BY contestant_name DESC"}
+{"db_id": "voter_1", "pred_sql": "SELECT vote_id ,  phone_number ,  state FROM VOTES"}
+{"db_id": "voter_1", "pred_sql": "SELECT max(area_code) ,  min(area_code) FROM AREA_CODE_STATE"}
+{"db_id": "voter_1", "pred_sql": "SELECT max(created) FROM VOTES WHERE STATE  =  \"CA\""}
+{"db_id": "voter_1", "pred_sql": "SELECT contestant_name FROM contestants WHERE contestant_name != 'Jessie Alloway'"}
+{"db_id": "voter_1", "pred_sql": "SELECT DISTINCT state ,  created FROM VOTES"}
+{"db_id": "voter_1", "pred_sql": "SELECT T1.contestant_number ,  T1.contestant_name FROM contestants AS T1 JOIN votes AS T2 ON T1.contestant_number  =  T2.contestant_number GROUP BY T1.contestant_number HAVING count(*)  >=  2"}
+{"db_id": "voter_1", "pred_sql": "SELECT T1.contestant_number ,  T1.contestant_name FROM contestants AS T1 JOIN votes AS T2 ON T1.contestant_number  =  T2.contestant_number GROUP BY T1.contestant_number ORDER BY count(*) ASC LIMIT 1"}
+{"db_id": "voter_1", "pred_sql": "SELECT count(*) FROM VOTES WHERE STATE  =  'NY' OR STATE  =  'CA'"}
+{"db_id": "voter_1", "pred_sql": "SELECT count(*) FROM contestants WHERE contestant_number NOT IN ( SELECT contestant_number FROM votes )"}
+{"db_id": "voter_1", "pred_sql": "SELECT T1.area_code FROM AREA_CODE_STATE AS T1 JOIN VOTES AS T2 ON T1.state  =  T2.state GROUP BY T2.state ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "voter_1", "pred_sql": "SELECT T1.created ,  T1.state ,  T1.phone_number FROM VOTES AS T1 JOIN contestants AS T2 ON T1.contestant_number  =  T2.contestant_number WHERE T2.contestant_name  =  \"Tabatha Gehling\""}
+{"db_id": "voter_1", "pred_sql": "SELECT T1.area_code FROM AREA_CODE_STATE AS T1 JOIN VOTES AS T2 ON T1.state  =  T2.state WHERE T2.contestant_number IN ( SELECT contestant_number FROM contestants WHERE contestant_name  =  'Tabatha Gehling' INTERSECT SELECT contestant_number FROM contestants WHERE contestant_name  =  'Kelly Clauss' )"}
+{"db_id": "voter_1", "pred_sql": "SELECT contestant_name FROM contestants WHERE contestant_name LIKE '%Al%'"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country WHERE IndepYear  >  1950"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country WHERE IndepYear  >  1950"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM country WHERE GovernmentForm  =  'Republic'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM country WHERE GovernmentForm  =  'Republic'"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(SurfaceArea) FROM country WHERE Region  =  'Caribbean'"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(SurfaceArea) FROM country WHERE Continent  =  'Caribbean'"}
+{"db_id": "world_1", "pred_sql": "SELECT Continent FROM country WHERE Name  =  'Anguilla'"}
+{"db_id": "world_1", "pred_sql": "SELECT Continent FROM country WHERE Name  =  'Anguilla'"}
+{"db_id": "world_1", "pred_sql": "SELECT t1.Region FROM country AS t1 JOIN city AS t2 ON t1.Code  =  t2.CountryCode WHERE t2.Name  =  'Kabul'"}
+{"db_id": "world_1", "pred_sql": "SELECT Region FROM country WHERE Capital  =  \"Kabul\""}
+{"db_id": "world_1", "pred_sql": "SELECT Language FROM countrylanguage WHERE CountryCode  =  \"ARU\" ORDER BY Percentage DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT Language FROM countrylanguage WHERE CountryCode  =  \"ARU\" AND IsOfficial  =  'T' ORDER BY Percentage DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT Population ,  LifeExpectancy FROM country WHERE Name  =  'Brazil'"}
+{"db_id": "world_1", "pred_sql": "SELECT Population ,  LifeExpectancy FROM country WHERE Name  =  'Brazil'"}
+{"db_id": "world_1", "pred_sql": "SELECT Region ,  Population FROM country WHERE Name  =  'Angola'"}
+{"db_id": "world_1", "pred_sql": "SELECT Region ,  Population FROM country WHERE Name  =  'Angola'"}
+{"db_id": "world_1", "pred_sql": "SELECT avg(LifeExpectancy) FROM country WHERE Region  =  'Central Africa'"}
+{"db_id": "world_1", "pred_sql": "SELECT avg(LifeExpectancy) FROM country WHERE Continent  =  'Central Africa'"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country WHERE Continent  =  'Asia' AND LifeExpectancy  =  (SELECT min(LifeExpectancy) FROM country WHERE Continent  =  'Asia')"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country WHERE Continent  =  'Asia' ORDER BY LifeExpectancy LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(Population) ,  max(GNP) FROM country WHERE Continent  =  'Asia'"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(T1.Population) ,  max(T2.GNP) FROM city AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.Continent  =  'Asia'"}
+{"db_id": "world_1", "pred_sql": "SELECT avg(LifeExpectancy) FROM country WHERE Continent  =  'Africa' AND GovernmentForm  =  'Republic'"}
+{"db_id": "world_1", "pred_sql": "SELECT avg(LifeExpectancy) FROM country WHERE Continent  =  'Africa' AND GovernmentForm  =  'Republic'"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(SurfaceArea) FROM country WHERE Continent  =  'Asia' OR Continent  =  'Europe'"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(SurfaceArea) FROM country WHERE Continent  =  'Asia' OR Continent  =  'Europe'"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(Population) FROM city WHERE District  =  'Gelderland'"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(Population) FROM city WHERE District  =  'Gelderland'"}
+{"db_id": "world_1", "pred_sql": "SELECT avg(GNP) ,  sum(Population) FROM country WHERE GovernmentForm  =  'US Territory'"}
+{"db_id": "world_1", "pred_sql": "SELECT avg(GNP) ,  sum(Population) FROM country WHERE Continent  =  'North America'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(DISTINCT Language) FROM countrylanguage"}
+{"db_id": "world_1", "pred_sql": "SELECT count(DISTINCT Language) FROM countrylanguage"}
+{"db_id": "world_1", "pred_sql": "SELECT count(DISTINCT governmentform) FROM country WHERE continent  =  'Africa'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(DISTINCT GovernmentForm) FROM country WHERE Continent  =  'Africa'"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(T1.Percentage) FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.Name  =  'Aruba'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(DISTINCT Language) FROM countrylanguage WHERE CountryCode  =  'ARU'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T1.Name  =  'Afghanistan' AND IsOfficial  =  'T'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T1.Name  =  'Afghanistan' AND IsOfficial  =  'T'"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode GROUP BY T2.CountryCode ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode GROUP BY T2.CountryCode ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Continent FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode GROUP BY T1.Code ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Continent ,  count(*) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode GROUP BY T1.Continent ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM countrylanguage WHERE Language  =  'English' INTERSECT SELECT count(*) FROM countrylanguage WHERE Language  =  'Dutch'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM countrylanguage WHERE Language  =  'English' INTERSECT SELECT count(*) FROM countrylanguage WHERE Language  =  'Dutch'"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'English' INTERSECT SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'French'"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'English' INTERSECT SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'French'"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'English' INTERSECT SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'French'"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'English' INTERSECT SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'French'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(DISTINCT T1.Continent) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'Chinese'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM country WHERE Language = 'Chinese'"}
+{"db_id": "world_1", "pred_sql": "SELECT DISTINCT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'English' OR T2.Language  =  'Dutch'"}
+{"db_id": "world_1", "pred_sql": "SELECT DISTINCT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'Dutch' OR T2.Language  =  'English'"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'English' OR T2.Language  =  'Dutch'"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'English' OR T2.Language  =  'Dutch'"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Language FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.Continent  =  'Asia' ORDER BY T1.Percentage DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Language FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.Continent  =  'Asia' GROUP BY T1.Language ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Language FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.GovernmentForm  =  'Republic' GROUP BY T1.Language HAVING COUNT(*)  =  1"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Language FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.GovernmentForm  =  'Republic' GROUP BY T1.Language HAVING COUNT(*)  =  1"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM city AS T1 JOIN countrylanguage AS T2 ON T1.CountryCode  =  T2.CountryCode WHERE T2.Language  =  'English' AND T1.population  =  (SELECT max(Population) FROM city)"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM city AS T1 JOIN countrylanguage AS T2 ON T1.CountryCode  =  T2.CountryCode WHERE T2.Language  =  'English' AND T1.population  >=  ALL(SELECT population FROM city WHERE T2.Language  =  'English')"}
+{"db_id": "world_1", "pred_sql": "SELECT name ,  population ,  LifeExpectancy FROM country WHERE continent  =  'Asia' ORDER BY SurfaceArea DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT name ,  population ,  LifeExpectancy FROM country WHERE continent  =  'Asia' ORDER BY SurfaceArea DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT avg(LifeExpectancy) FROM country WHERE Code NOT IN ( SELECT CountryCode FROM countrylanguage WHERE Language  =  'English' AND IsOfficial  =  'T' )"}
+{"db_id": "world_1", "pred_sql": "SELECT avg(LifeExpectancy) FROM country WHERE Code NOT IN ( SELECT CountryCode FROM countrylanguage WHERE Language  =  'English' AND IsOfficial  =  'T' )"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(T1.population) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.code  =  T2.countrycode WHERE T2.isofficial  =  'F'"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(Population) FROM country WHERE Code NOT IN (SELECT CountryCode FROM countrylanguage WHERE Language  =  'English')"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Language FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.HeadOfState  =  'Beatrix' AND T1.IsOfficial  =  'T'"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Language FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.HeadOfState  =  'Beatrix' AND T1.IsOfficial  =  'T'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(DISTINCT T1.Language) FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.IndepYear  <  1930 AND T1.IsOfficial  =  'T'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(DISTINCT Language) FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.IndepYear  <  1930"}
+{"db_id": "world_1", "pred_sql": "SELECT name FROM country WHERE surfacearea  >  (SELECT min(surfacearea) FROM country WHERE continent  =  'Europe')"}
+{"db_id": "world_1", "pred_sql": "SELECT name FROM country WHERE surfacearea  >  (SELECT min(surfacearea) FROM country WHERE continent  =  'Europe')"}
+{"db_id": "world_1", "pred_sql": "SELECT name FROM country WHERE continent  =  'Africa' AND population  <  (SELECT min(population) FROM country WHERE continent  =  'Asia')"}
+{"db_id": "world_1", "pred_sql": "SELECT name FROM country WHERE continent  =  'Africa' AND population  <  (SELECT min(population) FROM country WHERE continent  =  'Asia')"}
+{"db_id": "world_1", "pred_sql": "SELECT name FROM country WHERE continent  =  'Asia' AND population  >  (SELECT max(population) FROM country WHERE continent  =  'Africa')"}
+{"db_id": "world_1", "pred_sql": "SELECT name FROM country WHERE continent  =  'Asia' AND population  >  (SELECT max(population) FROM country WHERE continent  =  'Africa')"}
+{"db_id": "world_1", "pred_sql": "SELECT Code FROM country EXCEPT SELECT CountryCode FROM countrylanguage WHERE Language  =  'English'"}
+{"db_id": "world_1", "pred_sql": "SELECT Code FROM country EXCEPT SELECT CountryCode FROM countrylanguage WHERE Language  =  'English'"}
+{"db_id": "world_1", "pred_sql": "SELECT Code FROM country WHERE Language != 'English'"}
+{"db_id": "world_1", "pred_sql": "SELECT Code FROM country EXCEPT SELECT Code FROM countrylanguage WHERE Language  =  'English'"}
+{"db_id": "world_1", "pred_sql": "SELECT Code FROM country EXCEPT SELECT T1.Code FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'English' INTERSECT SELECT Code FROM country WHERE GovernmentForm != 'Republic'"}
+{"db_id": "world_1", "pred_sql": "SELECT Code FROM country EXCEPT SELECT T1.Code FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'English' INTERSECT SELECT Code FROM country WHERE GovernmentForm != 'Republic'"}
+{"db_id": "world_1", "pred_sql": "SELECT name FROM city WHERE countrycode IN (SELECT code FROM country WHERE continent  =  'Europe' EXCEPT SELECT T1.name FROM city AS T1 JOIN country AS T2 ON T1.countrycode  =  T2.code JOIN countrylanguage AS T3 ON T2.code  =  T3.countrycode WHERE T3.language  =  'English' AND T3.isofficial  =  'T')"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name FROM city AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.Continent  =  'Europe' AND T2.Language != 'English'"}
+{"db_id": "world_1", "pred_sql": "SELECT DISTINCT T1.Name FROM city AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code JOIN countrylanguage AS T3 ON T2.Code  =  T3.CountryCode WHERE T3.Language  =  'Chinese' AND T2.Continent  =  'Asia'"}
+{"db_id": "world_1", "pred_sql": "SELECT DISTINCT T1.Name FROM city AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code JOIN countrylanguage AS T3 ON T2.Code  =  T3.CountryCode WHERE T2.Continent  =  'Asia' AND T3.IsOfficial  =  'T' AND T3.Language  =  'Chinese'"}
+{"db_id": "world_1", "pred_sql": "SELECT Name ,  IndepYear ,  SurfaceArea FROM country ORDER BY Population LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT Name ,  IndepYear ,  SurfaceArea FROM country ORDER BY Population LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT Population ,  Name ,  HeadOfState FROM country ORDER BY SurfaceArea DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT name ,  population ,  HeadOfState FROM country ORDER BY SurfaceArea DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name ,  COUNT(*) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode GROUP BY T2.CountryCode HAVING COUNT(*)  >=  3"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name ,  count(*) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode GROUP BY T1.Code HAVING count(*)  >  2"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) ,  district FROM city WHERE population  >  (SELECT avg(population) FROM city) GROUP BY district"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) ,  district FROM city WHERE population  >  (SELECT avg(population) FROM city) GROUP BY district"}
+{"db_id": "world_1", "pred_sql": "SELECT GovernmentForm ,  sum(Population) FROM country GROUP BY GovernmentForm HAVING avg(LifeExpectancy)  >  72"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) ,  GovernmentForm FROM country WHERE LifeExpectancy  >  72 GROUP BY GovernmentForm"}
+{"db_id": "world_1", "pred_sql": "SELECT avg(LifeExpectancy) ,  sum(Population) ,  Continent FROM country GROUP BY Continent HAVING avg(LifeExpectancy)  <  72"}
+{"db_id": "world_1", "pred_sql": "SELECT Continent ,  sum(Population) ,  avg(LifeExpectancy) FROM country GROUP BY Continent HAVING avg(LifeExpectancy)  <  72"}
+{"db_id": "world_1", "pred_sql": "SELECT Name ,  SurfaceArea FROM country ORDER BY SurfaceArea DESC LIMIT 5"}
+{"db_id": "world_1", "pred_sql": "SELECT Name ,  SurfaceArea FROM country ORDER BY Population DESC LIMIT 5"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country ORDER BY Population DESC LIMIT 3"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country ORDER BY Population DESC LIMIT 3"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country ORDER BY Population ASC LIMIT 3"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country ORDER BY Population LIMIT 3"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM country WHERE Continent  =  'Asia'"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM country WHERE Continent  =  'Asia'"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country WHERE Continent  =  'Europe' AND Population  =  80000"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM country WHERE Continent  =  'Europe' AND Population  =  80000"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(Population) ,  avg(SurfaceArea) FROM country WHERE Continent  =  'North America' AND SurfaceArea  >  3000"}
+{"db_id": "world_1", "pred_sql": "SELECT sum(Population) ,  avg(SurfaceArea) FROM country WHERE Continent  =  'North America' AND SurfaceArea  >  3000"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM city WHERE Population BETWEEN 160000 AND 900000"}
+{"db_id": "world_1", "pred_sql": "SELECT Name FROM city WHERE Population BETWEEN 160000 AND 900000"}
+{"db_id": "world_1", "pred_sql": "SELECT Language FROM countrylanguage GROUP BY Language ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT Language FROM countrylanguage GROUP BY Language ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Name ,  T2.Language FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode ORDER BY T2.Percentage DESC GROUP BY T1.Code"}
+{"db_id": "world_1", "pred_sql": "SELECT CountryCode ,  Language FROM countrylanguage ORDER BY Percentage DESC LIMIT 1"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM countrylanguage WHERE Language  =  \"Spanish\" AND Percentage  =  ( SELECT max(Percentage) FROM countrylanguage WHERE Language  =  \"Spanish\" )"}
+{"db_id": "world_1", "pred_sql": "SELECT count(*) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'Spanish' AND T2.IsOfficial  =  'T' AND T2.Percentage  >=  50"}
+{"db_id": "world_1", "pred_sql": "SELECT CountryCode FROM countrylanguage WHERE Language  =  \"Spanish\" AND Percentage  =  (SELECT max(Percentage) FROM countrylanguage WHERE Language  =  \"Spanish\")"}
+{"db_id": "world_1", "pred_sql": "SELECT T1.Code FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  'Spanish' AND T2.IsOfficial  =  'T' AND T2.Percentage  >=  50"}
+{"db_id": "orchestra", "pred_sql": "SELECT count(*) FROM conductor"}
+{"db_id": "orchestra", "pred_sql": "SELECT count(*) FROM conductor"}
+{"db_id": "orchestra", "pred_sql": "SELECT Name FROM conductor ORDER BY Age ASC"}
+{"db_id": "orchestra", "pred_sql": "SELECT Name FROM conductor ORDER BY Age"}
+{"db_id": "orchestra", "pred_sql": "SELECT Name FROM conductor WHERE Nationality != \"USA\""}
+{"db_id": "orchestra", "pred_sql": "SELECT Name FROM conductor WHERE Nationality != \"USA\""}
+{"db_id": "orchestra", "pred_sql": "SELECT Record_Company FROM orchestra ORDER BY Year_of_Founded DESC"}
+{"db_id": "orchestra", "pred_sql": "SELECT Record_Company FROM orchestra ORDER BY Year_of_Founded DESC"}
+{"db_id": "orchestra", "pred_sql": "SELECT avg(Attendance) FROM show"}
+{"db_id": "orchestra", "pred_sql": "SELECT avg(attendance) FROM show"}
+{"db_id": "orchestra", "pred_sql": "SELECT max(Share) ,  min(Share) FROM performance WHERE TYPE != \"Live final\""}
+{"db_id": "orchestra", "pred_sql": "SELECT max(Share) ,  min(Share) FROM performance WHERE TYPE != \"Live final\""}
+{"db_id": "orchestra", "pred_sql": "SELECT count(DISTINCT Nationality) FROM conductor"}
+{"db_id": "orchestra", "pred_sql": "SELECT count(DISTINCT Nationality) FROM conductor"}
+{"db_id": "orchestra", "pred_sql": "SELECT Name FROM conductor ORDER BY Year_of_Work DESC"}
+{"db_id": "orchestra", "pred_sql": "SELECT Name FROM conductor ORDER BY Year_of_Work DESC"}
+{"db_id": "orchestra", "pred_sql": "SELECT Name FROM conductor ORDER BY Year_of_Work DESC LIMIT 1"}
+{"db_id": "orchestra", "pred_sql": "SELECT Name FROM conductor ORDER BY Year_of_Work DESC LIMIT 1"}
+{"db_id": "orchestra", "pred_sql": "SELECT T2.Name ,  T1.Orchestra FROM orchestra AS T1 JOIN conductor AS T2 ON T1.Conductor_ID  =  T2.Conductor_ID"}
+{"db_id": "orchestra", "pred_sql": "SELECT T2.Name ,  T1.Orchestra FROM orchestra AS T1 JOIN conductor AS T2 ON T1.Conductor_ID  =  T2.Conductor_ID"}
+{"db_id": "orchestra", "pred_sql": "SELECT T1.Name FROM conductor AS T1 JOIN orchestra AS T2 ON T1.Conductor_ID  =  T2.Conductor_ID GROUP BY T1.Conductor_ID HAVING COUNT(*)  >  1"}
+{"db_id": "orchestra", "pred_sql": "SELECT T1.Name FROM conductor AS T1 JOIN orchestra AS T2 ON T1.Conductor_ID  =  T2.Conductor_ID GROUP BY T1.Conductor_ID HAVING COUNT(*)  >  1"}
+{"db_id": "orchestra", "pred_sql": "SELECT T1.Name FROM conductor AS T1 JOIN orchestra AS T2 ON T1.Conductor_ID  =  T2.Conductor_ID GROUP BY T1.Conductor_ID ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "orchestra", "pred_sql": "SELECT T1.Name FROM conductor AS T1 JOIN orchestra AS T2 ON T1.Conductor_ID  =  T2.Conductor_ID GROUP BY T1.Conductor_ID ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "orchestra", "pred_sql": "SELECT T1.Name FROM conductor AS T1 JOIN orchestra AS T2 ON T1.Conductor_ID  =  T2.Conductor_ID WHERE T2.Year_of_Founded  >  2008"}
+{"db_id": "orchestra", "pred_sql": "SELECT T1.Name FROM conductor AS T1 JOIN orchestra AS T2 ON T1.Conductor_ID  =  T2.Conductor_ID WHERE T2.Year_of_Founded  >  2008"}
+{"db_id": "orchestra", "pred_sql": "SELECT Record_Company ,  COUNT(*) FROM orchestra GROUP BY Record_Company"}
+{"db_id": "orchestra", "pred_sql": "SELECT Record_Company ,  COUNT(*) FROM orchestra GROUP BY Record_Company"}
+{"db_id": "orchestra", "pred_sql": "SELECT Major_Record_Format FROM orchestra GROUP BY Major_Record_Format ORDER BY COUNT(*) ASC"}
+{"db_id": "orchestra", "pred_sql": "SELECT Major_Record_Format FROM orchestra GROUP BY Major_Record_Format ORDER BY COUNT(*) DESC"}
+{"db_id": "orchestra", "pred_sql": "SELECT Record_Company FROM orchestra GROUP BY Record_Company ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "orchestra", "pred_sql": "SELECT Record_Company FROM orchestra GROUP BY Record_Company ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "orchestra", "pred_sql": "SELECT Orchestra FROM orchestra WHERE Orchestra_ID NOT IN (SELECT Orchestra_ID FROM performance)"}
+{"db_id": "orchestra", "pred_sql": "SELECT Orchestra FROM orchestra WHERE Orchestra_ID NOT IN (SELECT Orchestra_ID FROM performance)"}
+{"db_id": "orchestra", "pred_sql": "SELECT Record_Company FROM orchestra WHERE Year_of_Founded  <  2003 INTERSECT SELECT Record_Company FROM orchestra WHERE Year_of_Founded  >  2003"}
+{"db_id": "orchestra", "pred_sql": "SELECT Record_Company FROM orchestra WHERE Year_of_Founded  <  2003 INTERSECT SELECT Record_Company FROM orchestra WHERE Year_of_Founded  >  2003"}
+{"db_id": "orchestra", "pred_sql": "SELECT COUNT(*) FROM orchestra WHERE Major_Record_Format  =  \"CD\" OR Major_Record_Format  =  \"DVD\""}
+{"db_id": "orchestra", "pred_sql": "SELECT COUNT(*) FROM orchestra WHERE Major_Record_Format  =  \"CD\" OR Major_Record_Format  =  \"DVD\""}
+{"db_id": "orchestra", "pred_sql": "SELECT T1.Year_of_founded FROM orchestra AS T1 JOIN performance AS T2 ON T1.Orchestra_ID  =  T2.Orchestra_ID GROUP BY T2.Orchestra_ID HAVING COUNT(*)  >  1"}
+{"db_id": "orchestra", "pred_sql": "SELECT T2.Year_of_founded FROM performance AS T1 JOIN orchestra AS T2 ON T1.Orchestra_ID  =  T2.Orchestra_ID GROUP BY T1.Orchestra_ID HAVING COUNT(*)  >  1"}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) FROM Highschooler"}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) FROM Highschooler"}
+{"db_id": "network_1", "pred_sql": "SELECT name ,  grade FROM Highschooler"}
+{"db_id": "network_1", "pred_sql": "SELECT name ,  grade FROM Highschooler"}
+{"db_id": "network_1", "pred_sql": "SELECT DISTINCT grade FROM Highschooler"}
+{"db_id": "network_1", "pred_sql": "SELECT DISTINCT grade FROM Highschooler"}
+{"db_id": "network_1", "pred_sql": "SELECT grade FROM Highschooler WHERE name  =  'Kyle'"}
+{"db_id": "network_1", "pred_sql": "SELECT grade FROM Highschooler WHERE name  =  'Kyle'"}
+{"db_id": "network_1", "pred_sql": "SELECT name FROM Highschooler WHERE grade  =  10"}
+{"db_id": "network_1", "pred_sql": "SELECT name FROM Highschooler WHERE grade  =  10"}
+{"db_id": "network_1", "pred_sql": "SELECT id FROM Highschooler WHERE name  =  'Kyle'"}
+{"db_id": "network_1", "pred_sql": "SELECT id FROM Highschooler WHERE name  =  'Kyle'"}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) FROM Highschooler WHERE grade  =  9 OR grade  =  10"}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) FROM Highschooler WHERE grade  =  9 OR grade  =  10"}
+{"db_id": "network_1", "pred_sql": "SELECT grade ,  count(*) FROM Highschooler GROUP BY grade"}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) ,  grade FROM Highschooler GROUP BY grade"}
+{"db_id": "network_1", "pred_sql": "SELECT grade FROM Highschooler GROUP BY grade ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "network_1", "pred_sql": "SELECT grade FROM Highschooler GROUP BY grade ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "network_1", "pred_sql": "SELECT grade FROM Highschooler GROUP BY grade HAVING count(*)  >=  4"}
+{"db_id": "network_1", "pred_sql": "SELECT grade FROM Highschooler GROUP BY grade HAVING count(*)  >=  4"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.id ,  count(*) FROM Highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id GROUP BY T1.id"}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) ,  T1.id FROM Highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id GROUP BY T1.id"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name ,  count(*) FROM Highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id GROUP BY T1.id"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name ,  count(*) FROM Highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM Highschooler AS T1 JOIN Friend AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM Highschooler AS T1 JOIN Friend AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM Highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id HAVING count(*)  >=  3"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM Highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id HAVING count(*)  >=  3"}
+{"db_id": "network_1", "pred_sql": "SELECT T3.name FROM friend AS T1 JOIN highschooler AS T2 ON T1.student_id  =  T2.id JOIN highschooler AS T3 ON T1.friend_id  =  T3.id WHERE T2.name  =  'Kyle'"}
+{"db_id": "network_1", "pred_sql": "SELECT T3.name FROM friend AS T1 JOIN highschooler AS T2 ON T1.student_id  =  T2.id JOIN highschooler AS T3 ON T1.friend_id  =  T3.id WHERE T2.name  =  \"Kyle\""}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) FROM friend AS T1 JOIN highschooler AS T2 ON T1.friend_id  =  T2.id WHERE T2.name  =  'Kyle'"}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) FROM friend AS T1 JOIN highschooler AS T2 ON T1.friend_id  =  T2.id WHERE T2.name  =  'Kyle'"}
+{"db_id": "network_1", "pred_sql": "SELECT id FROM highschooler EXCEPT SELECT student_id FROM friend"}
+{"db_id": "network_1", "pred_sql": "SELECT id FROM Highschooler EXCEPT SELECT student_id FROM friend"}
+{"db_id": "network_1", "pred_sql": "SELECT name FROM Highschooler WHERE id NOT IN (SELECT student_id FROM friend)"}
+{"db_id": "network_1", "pred_sql": "SELECT name FROM highschooler WHERE id NOT IN (SELECT student_id FROM friend)"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.id FROM Highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id INTERSECT SELECT T1.id FROM Highschooler AS T1 JOIN likes AS T2 ON T1.id  =  T2.student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT student_id FROM friend INTERSECT SELECT student_id FROM likes"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id INTERSECT SELECT T1.name FROM highschooler AS T1 JOIN likes AS T2 ON T1.id  =  T2.student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM Highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id INTERSECT SELECT T1.name FROM Highschooler AS T1 JOIN likes AS T2 ON T1.id  =  T2.student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT student_id ,  count(*) FROM Likes GROUP BY student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT student_id ,  count(*) FROM Likes GROUP BY student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name ,  count(*) FROM Highschooler AS T1 JOIN Likes AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name ,  count(*) FROM Highschooler AS T1 JOIN Likes AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM highschooler AS T1 JOIN likes AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "network_1", "pred_sql": "SELECT t1.name FROM highschooler AS T1 JOIN likes AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM highschooler AS T1 JOIN likes AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id HAVING count(*)  >=  2"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM highschooler AS T1 JOIN likes AS T2 ON T1.id  =  T2.student_id GROUP BY T2.student_id HAVING count(*)  >=  2"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id WHERE T1.grade  >  5 GROUP BY T1.id HAVING count(*)  >=  2"}
+{"db_id": "network_1", "pred_sql": "SELECT T1.name FROM Highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id WHERE T1.grade  >  5 GROUP BY T1.id HAVING count(*)  >=  2"}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) FROM likes AS T1 JOIN highschooler AS T2 ON T1.student_id  =  T2.id WHERE T2.name  =  'Kyle'"}
+{"db_id": "network_1", "pred_sql": "SELECT count(*) FROM likes AS T1 JOIN highschooler AS T2 ON T1.student_id  =  T2.id WHERE T2.name  =  'Kyle'"}
+{"db_id": "network_1", "pred_sql": "SELECT avg(T1.grade) FROM highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT avg(T1.grade) FROM highschooler AS T1 JOIN friend AS T2 ON T1.id  =  T2.student_id"}
+{"db_id": "network_1", "pred_sql": "SELECT min(grade) FROM Highschooler WHERE id NOT IN (SELECT student_id FROM friend)"}
+{"db_id": "network_1", "pred_sql": "SELECT min(grade) FROM Highschooler WHERE id NOT IN (SELECT student_id FROM friend)"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT state FROM owners INTERSECT SELECT state FROM professionals"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT state FROM owners INTERSECT SELECT state FROM professionals"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT avg(T1.age) FROM Dogs AS T1 JOIN Treatments AS T2 ON T1.dog_id  =  T2.dog_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT avg(T1.age) FROM Dogs AS T1 JOIN Treatments AS T2 ON T1.dog_id  =  T2.dog_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.professional_id ,  T1.last_name ,  T1.cell_number FROM Professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id WHERE T1.state  =  \"Indiana\" GROUP BY T1.professional_id HAVING count(*)  >  2"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.professional_id ,  T1.last_name ,  T1.cell_number FROM professionals AS T1 JOIN treatments AS T2 ON T1.professional_id  =  T2.professional_id WHERE T1.state  =  \"Indiana\" UNION SELECT T1.professional_id ,  T1.last_name ,  T1.cell_number FROM professionals AS T1 JOIN treatments AS T2 ON T1.professional_id  =  T2.professional_id GROUP BY T1.professional_id HAVING count(*)  >  2"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT name FROM Dogs WHERE dog_id NOT IN ( SELECT T1.dog_id FROM Treatments AS T1 JOIN Owners AS T2 ON T1.owner_id  =  T2.owner_id GROUP BY T1.dog_id HAVING sum(T1.cost_of_treatment)  >  1000 )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.name FROM Dogs AS T1 JOIN Owners AS T2 ON T1.owner_id  =  T2.owner_id EXCEPT SELECT T3.name FROM Dogs AS T3 JOIN Owners AS T4 ON T3.owner_id  =  T4.owner_id JOIN Treatments AS T5 ON T3.dog_id  =  T5.dog_id GROUP BY T4.owner_id HAVING sum(T5.cost_of_treatment)  >  1000"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT first_name FROM professionals UNION SELECT first_name FROM owners EXCEPT SELECT name FROM dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT first_name FROM professionals UNION SELECT first_name FROM owners EXCEPT SELECT name FROM dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT professional_id ,  role_code ,  email_address FROM professionals WHERE professional_id NOT IN ( SELECT professional_id FROM treatments )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT professional_id ,  role_code ,  email_address FROM professionals WHERE professional_id NOT IN ( SELECT professional_id FROM treatments )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.owner_id ,  T1.first_name ,  T1.last_name FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id GROUP BY T1.owner_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.owner_id ,  T2.first_name ,  T2.last_name FROM Dogs AS T1 JOIN Owners AS T2 ON T1.owner_id  =  T2.owner_id GROUP BY T1.owner_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.professional_id ,  T1.role_code ,  T1.first_name FROM Professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id GROUP BY T1.professional_id HAVING count(*)  >=  2"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.professional_id ,  T1.role_code ,  T1.first_name FROM Professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id GROUP BY T1.professional_id HAVING count(*)  >=  2"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT t1.breed_name FROM breeds AS t1 JOIN dogs AS t2 ON t1.breed_code  =  t2.breed_code GROUP BY t1.breed_name ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT t1.breed_name FROM breeds AS t1 JOIN dogs AS t2 ON t1.breed_code  =  t2.breed_code GROUP BY t1.breed_name ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.owner_id ,  T2.last_name FROM Owners AS T1 JOIN Dogs AS T3 ON T1.owner_id  =  T3.owner_id JOIN Treatments AS T4 ON T3.dog_id  =  T4.dog_id GROUP BY T1.owner_id ORDER BY count(*) DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.owner_id ,  T2.last_name FROM Owners AS T1 JOIN Professionals AS T2 ON T1.owner_id  =  T2.professional_id JOIN Treatments AS T3 ON T1.owner_id  =  T3.dog_id GROUP BY T1.owner_id ORDER BY sum(T3.cost_of_treatment) DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.treatment_type_description FROM Treatment_Types AS T1 JOIN Treatments AS T2 ON T1.treatment_type_code  =  T2.treatment_type_code GROUP BY T1.treatment_type_code ORDER BY sum(T2.cost_of_treatment) LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.treatment_type_description FROM Treatment_Types AS T1 JOIN Treatments AS T2 ON T1.treatment_type_code  =  T2.treatment_type_code GROUP BY T1.treatment_type_code ORDER BY sum(T2.cost_of_treatment) LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.owner_id ,  T1.zip_code FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id JOIN Charges AS T3 ON T2.dog_id  =  T3.charge_id WHERE T3.charge_type  =  \"Payment\" GROUP BY T1.owner_id ORDER BY sum(T3.charge_amount) DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.owner_id ,  T1.zip_code FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id JOIN Treatments AS T3 ON T2.dog_id  =  T3.dog_id GROUP BY T1.owner_id ORDER BY sum(T3.cost_of_treatment) DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.professional_id ,  T1.cell_number FROM Professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id GROUP BY T1.professional_id HAVING count(*)  >=  2"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.professional_id ,  T1.cell_number FROM Professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id GROUP BY T1.professional_id HAVING count(*)  >=  2"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T1.last_name FROM professionals AS T1 JOIN treatments AS T2 ON T1.professional_id  =  T2.professional_id WHERE T2.cost_of_treatment  <  ( SELECT avg(cost_of_treatment) FROM treatments )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T1.last_name FROM professionals AS T1 JOIN treatments AS T2 ON T1.professional_id  =  T2.professional_id WHERE T2.cost_of_treatment  <  ( SELECT avg(cost_of_treatment) FROM treatments )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.date_of_treatment ,  T2.first_name FROM treatments AS T1 JOIN professionals AS T2 ON T1.professional_id  =  T2.professional_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.date_of_treatment ,  T2.first_name FROM treatments AS T1 JOIN professionals AS T2 ON T1.professional_id  =  T2.professional_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.cost_of_treatment ,  T2.treatment_type_description FROM Treatments AS T1 JOIN Treatment_Types AS T2 ON T1.treatment_type_code  =  T2.treatment_type_code"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.cost_of_treatment ,  T2.treatment_type_description FROM Treatments AS T1 JOIN Treatment_Types AS T2 ON T1.treatment_type_code  =  T2.treatment_type_code"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T1.last_name ,  T2.size_description FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T1.last_name ,  T2.size_description FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T2.name FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T2.name FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.name ,  T2.date_of_treatment FROM Dogs AS T1 JOIN Treatments AS T2 ON T1.dog_id  =  T2.dog_id WHERE T1.breed_code  =  (SELECT breed_code FROM breeds GROUP BY breed_code ORDER BY count(*) ASC LIMIT 1)"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.name ,  T2.date_of_treatment FROM Dogs AS T1 JOIN Treatments AS T2 ON T1.dog_id  =  T2.dog_id WHERE T1.breed_code IN ( SELECT breed_code FROM breeds GROUP BY breed_code ORDER BY count(*) ASC LIMIT 1 )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T1.last_name ,  T2.name FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id WHERE T1.state  =  \"Virginia\""}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T1.last_name ,  T2.name FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id WHERE T1.state  =  \"Virginia\""}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.date_arrived ,  T1.date_departed FROM Dogs AS T1 JOIN Treatments AS T2 ON T1.dog_id  =  T2.dog_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.date_arrived ,  T1.date_departed FROM Dogs AS T1 JOIN Treatments AS T2 ON T1.dog_id  =  T2.dog_id"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.last_name FROM owners AS T1 JOIN dogs AS T2 ON T1.owner_id  =  T2.owner_id ORDER BY T2.age LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.last_name FROM owners AS T1 JOIN dogs AS T2 ON T1.owner_id  =  T2.owner_id ORDER BY T2.age LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT email_address FROM professionals WHERE state  =  'Hawaii' OR state  =  'Wisconsin'"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT email_address FROM professionals WHERE state  =  'Hawaii' OR state  =  'Wisconsin'"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT date_arrived ,  date_departed FROM Dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT date_arrived ,  date_departed FROM Dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(DISTINCT dog_id) FROM Treatments"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(DISTINCT dog_id) FROM treatments"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(DISTINCT professional_id) FROM Treatments"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(DISTINCT professional_id) FROM Treatments"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT role_code ,  street ,  city ,  state FROM professionals WHERE city LIKE '%West%'"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT role_code ,  street ,  city ,  state FROM professionals WHERE city LIKE '%West%'"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT first_name ,  last_name ,  email_address FROM Owners WHERE state LIKE '%North%'"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT first_name ,  last_name ,  email_address FROM Owners WHERE state LIKE '%North%'"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(*) FROM Dogs WHERE age  <  ( SELECT avg(age) FROM Dogs )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(*) FROM Dogs WHERE age  <  ( SELECT avg(age) FROM Dogs )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT cost_of_treatment FROM Treatments ORDER BY date_of_treatment DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT cost_of_treatment FROM Treatments ORDER BY date_of_treatment DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(*) FROM Dogs WHERE dog_id NOT IN ( SELECT dog_id FROM Treatments )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(*) FROM Dogs WHERE dog_id NOT IN ( SELECT dog_id FROM Treatments )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(*) FROM owners WHERE owner_id NOT IN ( SELECT owner_id FROM dogs )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(*) FROM owners WHERE owner_id NOT IN ( SELECT owner_id FROM Dogs )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(*) FROM professionals WHERE professional_id NOT IN ( SELECT professional_id FROM treatments )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT count(*) FROM professionals WHERE professional_id NOT IN ( SELECT professional_id FROM treatments )"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT name ,  age ,  weight FROM Dogs WHERE abandoned_yn  =  '1'"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT name ,  age ,  weight FROM Dogs WHERE abandoned_yn  =  '1'"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT avg(age) FROM Dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT avg(age) FROM Dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT max(age) FROM Dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT max(age) FROM Dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT charge_type ,  charge_amount FROM Charges"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT charge_type ,  charge_amount FROM Charges"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT charge_amount FROM Charges ORDER BY charge_amount DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT charge_amount FROM Charges ORDER BY charge_amount DESC LIMIT 1"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT email_address ,  cell_number ,  home_phone FROM professionals"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT email_address ,  cell_number ,  home_phone FROM professionals"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT DISTINCT breed_code ,  size_code FROM dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT DISTINCT breed_code ,  size_code FROM Dogs"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T3.treatment_type_description FROM professionals AS T1 JOIN treatments AS T2 ON T1.professional_id  =  T2.professional_id JOIN Treatment_Types AS T3 ON T2.treatment_type_code  =  T3.treatment_type_code"}
+{"db_id": "dog_kennels", "pred_sql": "SELECT T1.first_name ,  T3.treatment_type_description FROM professionals AS T1 JOIN treatments AS T2 ON T1.professional_id  =  T2.professional_id JOIN treatment_types AS T3 ON T2.treatment_type_code  =  T3.treatment_type_code"}
+{"db_id": "singer", "pred_sql": "SELECT count(*) FROM singer"}
+{"db_id": "singer", "pred_sql": "SELECT count(*) FROM singer"}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer ORDER BY Net_Worth_Millions ASC"}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer ORDER BY Net_Worth_Millions ASC"}
+{"db_id": "singer", "pred_sql": "SELECT Birth_Year ,  Citizenship FROM singer"}
+{"db_id": "singer", "pred_sql": "SELECT Birth_Year ,  Citizenship FROM singer"}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer WHERE Citizenship != \"France\""}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer WHERE Citizenship != 'French'"}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer WHERE Birth_Year  =  1948 OR Birth_Year  =  1949"}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer WHERE Birth_Year  =  1948 OR Birth_Year  =  1949"}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer ORDER BY Net_Worth_Millions DESC LIMIT 1"}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer ORDER BY Net_Worth_Millions DESC LIMIT 1"}
+{"db_id": "singer", "pred_sql": "SELECT Citizenship ,  COUNT(*) FROM singer GROUP BY Citizenship"}
+{"db_id": "singer", "pred_sql": "SELECT Citizenship ,  COUNT(*) FROM singer GROUP BY Citizenship"}
+{"db_id": "singer", "pred_sql": "SELECT Citizenship FROM singer GROUP BY Citizenship ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "singer", "pred_sql": "SELECT Citizenship FROM singer GROUP BY Citizenship ORDER BY COUNT(*) DESC LIMIT 1"}
+{"db_id": "singer", "pred_sql": "SELECT Citizenship ,  max(Net_Worth_Millions) FROM singer GROUP BY Citizenship"}
+{"db_id": "singer", "pred_sql": "SELECT max(Net_Worth_Millions) ,  Citizenship FROM singer GROUP BY Citizenship"}
+{"db_id": "singer", "pred_sql": "SELECT T2.Title ,  T1.Name FROM singer AS T1 JOIN song AS T2 ON T1.Singer_ID  =  T2.Singer_ID"}
+{"db_id": "singer", "pred_sql": "SELECT T2.Title ,  T1.Name FROM singer AS T1 JOIN song AS T2 ON T1.Singer_ID  =  T2.Singer_ID"}
+{"db_id": "singer", "pred_sql": "SELECT DISTINCT T1.Name FROM singer AS T1 JOIN song AS T2 ON T1.Singer_ID  =  T2.Singer_ID WHERE T2.Sales  >  300000"}
+{"db_id": "singer", "pred_sql": "SELECT DISTINCT T1.Name FROM singer AS T1 JOIN song AS T2 ON T1.Singer_ID  =  T2.Singer_ID WHERE T2.Sales  >  300000"}
+{"db_id": "singer", "pred_sql": "SELECT T2.Name FROM song AS T1 JOIN singer AS T2 ON T1.Singer_ID  =  T2.Singer_ID GROUP BY T1.Singer_ID HAVING COUNT(*)  >  1"}
+{"db_id": "singer", "pred_sql": "SELECT T2.Name FROM song AS T1 JOIN singer AS T2 ON T1.Singer_ID  =  T2.Singer_ID GROUP BY T1.Singer_ID HAVING COUNT(*)  >  1"}
+{"db_id": "singer", "pred_sql": "SELECT T2.Name ,  sum(T1.Sales) FROM song AS T1 JOIN singer AS T2 ON T1.Singer_ID  =  T2.Singer_ID GROUP BY T2.Name"}
+{"db_id": "singer", "pred_sql": "SELECT T2.Name ,  sum(T1.Sales) FROM song AS T1 JOIN singer AS T2 ON T1.Singer_ID  =  T2.Singer_ID GROUP BY T2.Name"}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer WHERE Singer_ID NOT IN (SELECT Singer_ID FROM song)"}
+{"db_id": "singer", "pred_sql": "SELECT Name FROM singer WHERE Singer_ID NOT IN (SELECT Singer_ID FROM song)"}
+{"db_id": "singer", "pred_sql": "SELECT Citizenship FROM singer WHERE Birth_Year  <  1945 INTERSECT SELECT Citizenship FROM singer WHERE Birth_Year  >  1955"}
+{"db_id": "singer", "pred_sql": "SELECT Citizenship FROM singer WHERE Birth_Year  <  1945 INTERSECT SELECT Citizenship FROM singer WHERE Birth_Year  >  1955"}
+{"db_id": "real_estate_properties", "pred_sql": "SELECT count(*) FROM Other_Available_Features"}
+{"db_id": "real_estate_properties", "pred_sql": "SELECT T1.feature_type_name FROM Ref_Feature_Types AS T1 JOIN Other_Available_Features AS T2 ON T1.feature_type_code  =  T2.feature_type_code WHERE T2.feature_name  =  \"AirCon\""}
+{"db_id": "real_estate_properties", "pred_sql": "SELECT T1.property_type_description FROM Ref_Property_Types AS T1 JOIN Properties AS T2 ON T1.property_type_code  =  T2.property_type_code WHERE T2.property_type_code  =  \"Apartment\""}
+{"db_id": "real_estate_properties", "pred_sql": "SELECT property_name FROM Properties WHERE property_type_code  =  \"Apartment\" AND room_count  >  1 UNION SELECT property_name FROM Properties WHERE property_type_code  =  \"House\" AND room_count  >  1"}
